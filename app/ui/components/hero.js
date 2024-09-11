@@ -14,6 +14,7 @@ export default function Hero() {
     tl.from(".mainWrapper", { opacity: 0 })
       .from(".title", { opacity: 0, scale: 0, ease: "back" })
       .from("#sheikhsImg img", {
+        opacity:0,
         y: 360,
         stagger: 0.1,
         duration: 0.8,
@@ -36,6 +37,7 @@ export default function Hero() {
       className="bg-[url('../public/assests/97634.jpg')] bg-left bg-no-repeat bg-contain fixed z-30 font-sans bg-gray-50 my-10 px-6 py-12 overflow-hidden shadow-xl rounded-md"
       ref={container}
     >
+      <div className={`${styles.absoluteOverlay}`}></div>
       <div className="max-w-5xl max-md:max-w-md mx-auto">
         <div className="grid md:grid-cols-2 items-center gap-12">
           <div>
