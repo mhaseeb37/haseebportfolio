@@ -13,7 +13,7 @@ export default function Home() {
           className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
         >
           <source
-            src="/assests/video-bg.mp4"
+            src="/assets/video-bg.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
