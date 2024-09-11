@@ -8,7 +8,7 @@ import styles from "../custom.module.css";
 export default function Hero() {
   const container = useRef();
   useGSAP(() => {
-    gsap.set(".mainWrapper", { scale: 0.7 });
+    gsap.set(".mainWrapper", { scale: 0.7, opacity:0 });
 
     const tl = gsap.timeline();
     tl.from(".mainWrapper", { opacity: 0 })
@@ -19,21 +19,21 @@ export default function Hero() {
         duration: 0.8,
         ease: "back",
       })
-      .from("#actionBtns", { xPercent: -100 });
-      gsap.from('.round', {
+      .from("#actionBtns", { xPercent: -100 })
+      .from("#textBoxes", { opacity: 0, scale:0 })
+      .from('.round', {
         scale: 0,
-        duration: 1,
-        repeat: -1,        // Infinite loop
+        duration: 1,        // Infinite loop
         ease: 'power2.inOut',
         yoyo: true,
         stagger: {
           each: 0.2,      // Delay between animations of each element
         },
       });
-  }, []);
+  }, [{scope:container}]);
   return (
     <div
-      className="fixed z-30 font-sans bg-gray-50 my-10 px-6 py-12 overflow-hidden shadow-xl rounded-md"
+      className="bg-[url('../public/assests/97634.jpg')] bg-left bg-no-repeat bg-contain fixed z-30 font-sans bg-gray-50 my-10 px-6 py-12 overflow-hidden shadow-xl rounded-md"
       ref={container}
     >
       <div className="max-w-5xl max-md:max-w-md mx-auto">
@@ -68,7 +68,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div ref={container} className="flex gap-4 mt-2">
+      <div ref={container} className="textBoxes flex gap-4 mt-2">
         <div
           className={`${styles.circle} flex justify-center items-center round gradient-blue`}
         >
