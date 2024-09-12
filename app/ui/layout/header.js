@@ -23,6 +23,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -43,12 +44,12 @@ export default function Header() {
     <header className="fixed max-w-full w-full backdrop-blur">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <Image alt="" src="/assets/MH_Logo.png" className="w-auto"
             width={100}
             height={50} />
-          </a>
+          </Link>
         </div>
         {/* <div className="flex lg:hidden">
           <button
