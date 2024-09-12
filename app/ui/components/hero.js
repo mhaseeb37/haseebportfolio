@@ -2,18 +2,25 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { TextPlugin } from "gsap/TextPlugin";
 import Link from "next/link";
 import styles from "../custom.module.css";
 import Image from "next/image";
+import { lusitana, playfairDisplay, whisper } from '@/app/ui/fonts';
 
+// Register the TextPlugin
+gsap.registerPlugin(TextPlugin);
 export default function Hero() {
+  const words = ["Developer", "Traveler", "Vlogger"];
   const container = useRef();
   useGSAP(() => {
-    gsap.set(".mainWrapper", { scale: 0.7, opacity: 0 });
+    gsap.set(".mainWrapper", { scale: 1 });
 
     const tl = gsap.timeline();
-    tl.from(".mainWrapper", { opacity: 0 })
+    tl.from(".mainWrapper", { scale: 0.7, ease:"back" })
       .from(".title", { opacity: 0, scale: 0, ease: "back" })
+      .from(".title2", { opacity: 0, scale: 0, ease: "back" })
+      .from(".animatedWrapper", { opacity: 0, scale: 0, ease: "back" })
       .from("#sheikhsImg img", {
         opacity: 0,
         y: 360,
@@ -32,22 +39,42 @@ export default function Hero() {
           each: 0.2, // Delay between animations of each element
         },
       });
+      gsap.to("#cursor",{
+        opacity:0,
+        repeat:-1,
+        yoyo:true,
+        duration:0.5,
+        ease:"power2.inOut"
+      });
+      const tlmaster = gsap.timeline({repeat:-1});
+      words.forEach((word)=>{
+        let tlText = gsap.timeline({repeat:1,yoyo:true});
+        tlText.to("#animated-text", {duration:1, text:word});
+        tlmaster.add(tlText);
+      });
   }, [{ scope: container }]);
   return (
     <div
-      className="fixed z-30 font-sans my-10 px-6 py-12 overflow-hidden shadow-xl rounded-md"
+      className="mainWrapper fixed z-30 font-sans my-10 px-6 py-12 overflow-hidden shadow-xl rounded-md"
       ref={container}
     >
       <div className={`${styles.absoluteOverlay}`}></div>
       <div className="max-w-5xl max-md:max-w-md mx-auto">
         <div className="grid md:grid-cols-2 items-center gap-12">
           <div>
-            <h2 className="text-black lg:text-5xl md:text-4xl text-3xl font-bold mb-4 lg:!leading-[55px] title">
+            <h2 className={`${lusitana.className} text-black lg:text-5xl md:text-4xl text-3xl font-bold mb-4 lg:!leading-[55px] title`}>
               Hello!
             </h2>
-            <p className="text-black mt-6 text-base leading-relaxed title">
-              I am Muhammad Haseeb. Welcome to my world!
-            </p>
+            <div className={`${playfairDisplay.className} text-black mt-6 leading-relaxed title2`}>
+              <h3 className="text-3xl">I am</h3>
+              <h1 className={`${whisper.className} lg:text-6xl md:text-4xl text-3xl`}>Muhammad Haseeb</h1>
+            </div>
+            <div className={`${whisper.className} text-black text-4xl animatedWrapper mt-4`}>
+              <span className="mr-2">A</span>
+              
+              <span id="animated-text"></span>
+              <span id="cursor">_</span>
+            </div>
             <div className="mt-12" id="actionBtns">
               <Link
                 href="/profile"
@@ -64,9 +91,12 @@ export default function Hero() {
             </div>
           </div>
           <div id="sheikhsImg">
-            <img
-              src="https://readymadeui.com/readymadeui_banner.webp"
-              className="shrink-0 w-full h-full md:skew-x-[-22deg] md:-rotate-1 rounded-full object-contain"
+            <Image
+              src="/assets/portfoliopic.jpg"
+              className="shrink-0 w-full h-full md:-rotate-1 rounded-full object-contain"
+              width={100}
+              height={100}
+              unoptimized
             />
           </div>
         </div>
@@ -149,7 +179,7 @@ export default function Hero() {
             width="100px"
             height="100px"
             viewBox="0 0 512 512"
-            enable-background="new 0 0 512 512"
+            enableBackground="new 0 0 512 512"
           >
             <g id="c133de6af664cd4f011a55de6b001b19">
               <path
