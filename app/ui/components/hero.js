@@ -93,7 +93,7 @@ export default function Hero() {
           <div id="sheikhsImg">
             <Image
               src="/assets/portfoliopic.jpg"
-              className="shrink-0 w-full h-full md:-rotate-1 rounded-full object-contain"
+              className="shrink-0 w-full h-full md:-rotate-1 object-contain"
               width={100}
               height={100}
               unoptimized
