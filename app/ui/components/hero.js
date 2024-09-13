@@ -102,7 +102,7 @@ export default function Hero() {
         </div>
       </div>
       <div ref={container} className="textBoxes flex gap-4 mt-10">
-        <div className="flex justify-center items-center round gradient-blue">
+        <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
           <svg width="100px" height="100px" viewBox="-3 0 48 48" version="1.1">
             <g
               id="Color-"
@@ -116,7 +116,7 @@ export default function Hero() {
             </g>
           </svg>
         </div>
-        <div className="flex justify-center items-center round gradient-blue">
+        <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
           <svg
             fill="#000000"
             height="100px"
@@ -146,7 +146,7 @@ export default function Hero() {
             </g>
           </svg>
         </div>
-        <div className="flex justify-center items-center round gradient-blue">
+        <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
           <svg
             width="100px"
             height="100px"
@@ -162,7 +162,7 @@ export default function Hero() {
             </g>
           </svg>
         </div>
-        <div className="flex justify-center items-center round gradient-blue">
+        <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
           <svg width="100px" height="100px" viewBox="0 0 32 32" fill="none">
             <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#E44D26" />
             <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529" />
@@ -172,7 +172,7 @@ export default function Hero() {
             />
           </svg>
         </div>
-        <div className="flex justify-center items-center round gradient-blue">
+        <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
           <svg
             fill="#000000"
             version="1.1"
@@ -192,7 +192,7 @@ export default function Hero() {
             </g>
           </svg>
         </div>
-        <div className="flex justify-center items-center round gradient-blue">
+        <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
           <svg width="100px" height="100px" viewBox="0 0 256 256" version="1.1">
             <g>
               <path
