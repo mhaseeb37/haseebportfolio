@@ -11,7 +11,7 @@ import { lusitana, playfairDisplay, whisper } from '@/app/ui/fonts';
 // Register the TextPlugin
 gsap.registerPlugin(TextPlugin);
 export default function Hero() {
-  const words = ["Developer", "Traveler", "Vlogger"];
+  const words = ["🧑🏼‍💻 Developer", "🌎 Traveler", "🎥 Vlogger"];
   const container = useRef();
   useGSAP(() => {
     gsap.set(".mainWrapper", { scale: 1 });
@@ -23,7 +23,7 @@ export default function Hero() {
       .from(".animatedWrapper", { opacity: 0, scale: 0, ease: "back" })
       .from("#sheikhsImg img", {
         opacity: 0,
-        y: 360,
+        xPercent: 100,
         stagger: 0.1,
         duration: 0.8,
         ease: "back",
@@ -49,7 +49,7 @@ export default function Hero() {
       const tlmaster = gsap.timeline({repeat:-1});
       words.forEach((word)=>{
         let tlText = gsap.timeline({repeat:1,yoyo:true});
-        tlText.to("#animated-text", {duration:1, text:word});
+        tlText.to("#animated-text", {duration:1.5, text:word});
         tlmaster.add(tlText);
       });
   }, [{ scope: container }]);
@@ -70,7 +70,7 @@ export default function Hero() {
               <h1 className={`${whisper.className} lg:text-6xl md:text-4xl text-3xl`}>Muhammad Haseeb</h1>
             </div>
             <div className={`${whisper.className} text-black text-4xl animatedWrapper mt-4`}>
-              <span className="mr-2">A</span>
+              <span className="mr-5">A</span>
               
               <span id="animated-text"></span>
               <span id="cursor">_</span>
@@ -90,10 +90,10 @@ export default function Hero() {
               </Link>
             </div>
           </div>
-          <div id="sheikhsImg">
+          <div id="sheikhsImg" className="absolute inset-y-0 right-0 w-1/2">
             <Image
               src="/assets/portfoliopic.jpg"
-              className="shrink-0 w-full h-full md:-rotate-1 object-contain"
+              className="shrink-0 w-full h-full object-contain rounded-tl-full rounded-bl-full"
               width={100}
               height={100}
               unoptimized
