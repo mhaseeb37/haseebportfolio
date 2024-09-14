@@ -1,15 +1,20 @@
+import { NextResponse } from 'next/server';
 import { ServerClient } from 'postmark';
 
 const client = new ServerClient(process.env.POSTMARK_API_KEY);
-
+export async function GET() {
+    // Example response data
+    const data = { message: 'Hello, this is a GET request! from send email route' };
+    return NextResponse.json(data);
+}
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { email, subject, firstName, lastName, phone, message } = req.body;
+    const { to, subject, firstName, lastName, phone, message } = req.body;
 
     try {
       const response = await client.sendEmail({
         From: process.env.POSTMARK_FROM_EMAIL,
-        To: email,
+        To: to,
         Subject: subject,
         HtmlBody: `
           <table>
