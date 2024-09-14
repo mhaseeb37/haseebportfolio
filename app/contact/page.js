@@ -9,7 +9,7 @@ export default function Page() {
     firstName: "",
     lastName: "",
     phone: "",
-    email: "",
+    to: "",
     message: "",
     subject: "General Inquiry",
   });
@@ -252,7 +252,7 @@ export default function Page() {
                 <input
                   type="email"
                   placeholder="Email"
-                  name="email"
+                  name="to"
                   className="px-2 py-3 bg-white text-black w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 outline-none"
                   value={formData.email}
                   onChange={handleOnChange}
