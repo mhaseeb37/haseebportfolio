@@ -4,18 +4,27 @@ const client = new ServerClient(process.env.POSTMARK_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { to, subject, firstName, lastName, message } = req.body;
+    const { to, subject, firstName, lastName, phone, message } = req.body;
 
     try {
       const response = await client.sendEmail({
         From: process.env.POSTMARK_FROM_EMAIL,
         To: to,
         Subject: subject,
-        TextBody: `<table>
-        <tr><td><b>First Name: </b></td><td>${firstName}</td></tr>
-        <tr><td><b>Last Name: </b></td><td>${lastName}</td></tr>
-        <tr><td><b>Message: </b></td><td>${message}</td></tr>
-        </table>`
+        HtmlBody: `
+          <table>
+            <tr><td><b>First Name:</b></td><td>${firstName}</td></tr>
+            <tr><td><b>Last Name:</b></td><td>${lastName}</td></tr>
+            <tr><td><b>Phone:</b></td><td>${phone}</td></tr>
+            <tr><td><b>Message:</b></td><td>${message}</td></tr>
+          </table>
+        `,
+        TextBody: `
+          First Name: ${firstName}\n
+          Last Name: ${lastName}\n
+          Phone: ${phone}\n
+          Message: ${message}
+        `,
       });
 
       res.status(200).json({ message: 'Email sent successfully', response });
