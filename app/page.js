@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Hero from "./ui/components/hero";
 import styles from "./ui/custom.module.css"
 

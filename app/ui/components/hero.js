@@ -3,6 +3,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Link from "next/link";
 import styles from "../custom.module.css";
 import Image from "next/image";
@@ -10,6 +11,7 @@ import { lusitana, playfairDisplay, whisper } from '@/app/ui/fonts';
 
 // Register the TextPlugin
 gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
   const words = ["🧑🏼‍💻 Developer", "🌎 Traveler", "🎥 Vlogger"];
   const container = useRef();

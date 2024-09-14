@@ -45,7 +45,7 @@ export default function Page() {
             phone: "",
             email: "",
             message: "",
-            subject: "",
+            subject: "General Inquiry",
           });
         alert(result.message); // Notify user of success
 
