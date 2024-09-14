@@ -4,12 +4,12 @@ const client = new ServerClient(process.env.POSTMARK_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { to, subject, firstName, lastName, phone, message } = req.body;
+    const { email, subject, firstName, lastName, phone, message } = req.body;
 
     try {
       const response = await client.sendEmail({
         From: process.env.POSTMARK_FROM_EMAIL,
-        To: to,
+        To: email,
         Subject: subject,
         HtmlBody: `
           <table>
