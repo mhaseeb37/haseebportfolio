@@ -10,7 +10,7 @@ export async function GET() {
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     console.log(req.body);
-    const { to, subject, firstName, lastName, phone, message } = req.body;
+    const { to, subject, message } = req.body;
 
     try {
         const response = await client.sendEmail({
