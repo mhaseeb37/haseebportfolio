@@ -13,25 +13,14 @@ export default async function handler(req, res) {
     const { to, subject, firstName, lastName, phone, message } = req.body;
 
     try {
-      const response = await client.sendEmail({
-        From: process.env.POSTMARK_FROM_EMAIL,
-        To: to,
-        Subject: subject,
-        HtmlBody: `
-          <table>
-            <tr><td><b>First Name:</b></td><td>${firstName}</td></tr>
-            <tr><td><b>Last Name:</b></td><td>${lastName}</td></tr>
-            <tr><td><b>Phone:</b></td><td>${phone}</td></tr>
-            <tr><td><b>Message:</b></td><td>${message}</td></tr>
-          </table>
-        `,
-        TextBody: `
-          First Name: ${firstName}\n
-          Last Name: ${lastName}\n
-          Phone: ${phone}\n
-          Message: ${message}
-        `,
-      });
+        const response = await client.sendEmail({
+            From: process.env.POSTMARK_FROM_EMAIL,  // Sender's email from environment variable
+            To: to,
+            Subject: subject,
+            TextBody: message,
+            HtmlBody: `<html><body><strong>${message}</strong></body></html>`,
+            MessageStream: 'outbound',  // Use 'outbound' for regular emails
+          });
 
       res.status(200).json({ message: 'Email sent successfully', response });
     } catch (error) {
