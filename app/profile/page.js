@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Sidebar from "@/app/ui/components/sidebar";
-import Demo from "../ui/components/demo";
+import Top from "../ui/components/top";
 import styles from "@/app/ui/custom.module.css"
 
 // Register the TextPlugin
@@ -14,16 +14,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Page(){
   const container = useRef();
   useGSAP(() => {
-    gsap.to("#box2",{
-        scrollTrigger:{
-            trigger:"#box2",
-            start:"top center",
-            markers:true,
-            toggleActions:"restart pause reverse pause"
-        },
-        opacity:0.1,
-        duration:1
-    })
     
   }, [{ scope: container }]);
     return(
@@ -43,9 +33,7 @@ export default function Page(){
         </video>
             <div className="w-full flex h-screen flex-col md:flex-row mt-32 z-40" ref={container}>
                 <div className="w-full pl-10">
-                    <Demo cssclasses="bg-white text-black w-full min-h-full" title="White Box" id="box1" />
-                    <Demo cssclasses="bg-black text-black w-full min-h-full" title="Yellow Box" id="box2" />
-                    <Demo cssclasses="bg-red-500 text-black w-full min-h-full" title="Red Box" id="box3" />
+                    <Top />
                 </div>
                 <div className="relative w-full flex-none md:w-64 text-black">
                     <Sidebar />

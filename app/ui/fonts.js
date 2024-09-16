@@ -1,4 +1,4 @@
-import { Inter, Lusitana, Playfair_Display, Whisper } from 'next/font/google';
+import { Inter, Lusitana, Playfair_Display, Whisper, Poppins } from 'next/font/google';
  
 export const inter = Inter({ subsets: ['latin'] });
 
@@ -14,3 +14,9 @@ export const playfairDisplay = Playfair_Display({
     weight: ['400'], // Choose weights you want to import
     subsets: ['latin'], // Choose subsets
   });
+export const poppins = Poppins({
+  weight:['200','400','600','700'],
+  subsets:[
+    'latin'
+  ]
+})

@@ -1,0 +1,162 @@
+"use client";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { TextPlugin } from "gsap/TextPlugin";
+import Image from "next/image";
+import styles from "@/app/ui/custom.module.css"
+import { poppins } from "../fonts";
+
+gsap.registerPlugin(TextPlugin);
+export default function Top() {
+    const words = ["🧑🏼‍💻 Developer", "🌎 Traveler", "🎥 Vlogger"];
+    const container = useRef();
+    useGSAP(()=>{
+        const tl = gsap.timeline();
+        tl.from(".char",{
+            rotateX: -360,
+            scaleY:0,
+            opacity:0,
+            duration: 0.2, // Infinite loop
+            ease: "power2.inOut",
+            yoyo: true,
+            stagger: {
+                each: 0.1, // Delay between animations of each element
+            },
+        })
+        .to("#cursor",{
+            opacity:0,
+            repeat:-1,
+            yoyo:true,
+            duration:0.5,
+            ease:"power2.inOut"
+          });
+          const tlmaster = gsap.timeline({repeat:-1});
+          words.forEach((word)=>{
+            let tlText = gsap.timeline({repeat:1,yoyo:true});
+            tlText.to("#animated-text", {duration:2.5, text:word});
+            tlmaster.add(tlText);
+          });
+          gsap.from(".topwaves", {
+            opacity: 0,
+            duration: 1,
+            ease: "power2.inOut",
+            stagger: {
+              each: 0.2,
+            },
+            repeat: -1, // Infinite loop
+            repeatDelay: 0.5, // Delay between repeats
+          });
+          gsap.from(".bottomWaves", {
+            opacity: 0,
+            duration: 1,
+            ease: "power2.inOut",
+            stagger: {
+              each: 0.2,
+            },
+            repeat: -1, // Infinite loop
+            repeatDelay: 0.5, // Delay between repeats
+          });
+    },[{ scope: container }]);
+
+    return(
+        <div className="topWrapper flex items-center w-full md:max-w-3xl lg:max-w-4xl xl:max-w-5xl py-16" ref={container}>
+            <div className="textWrapper flex-1">
+                <h4 className={`${poppins.className} font-normal uppercase text-black leading-none`}>
+                    <div className="toptext text-2xl lg:text-4xl mb-8">
+                        <div className="word mr-2 inline-block">
+                            <div className="char inline-block">
+                                H
+                            </div>
+                            <div className="char inline-block">
+                                i
+                            </div>
+                            <div className="char inline-block">
+                                ,
+                            </div>
+                        </div>
+                        <div className="word mr-2 inline-block">
+                            <div className="char inline-block">
+                                I
+                            </div>
+                            <div className="char inline-block">
+                                '
+                            </div>
+                            <div className="char inline-block">
+                                M
+                            </div>
+                        </div>
+                        <div className="word mr-2 inline-block">
+                            <div className="char inline-block">
+                                M
+                            </div>
+                            <div className="char inline-block">
+                                U
+                            </div>
+                            <div className="char inline-block">
+                                H
+                            </div>
+                            <div className="char inline-block">
+                                A
+                            </div>
+                            <div className="char inline-block">
+                                M
+                            </div>
+                            <div className="char inline-block">
+                                M
+                            </div>
+                            <div className="char inline-block">
+                                A
+                            </div>
+                            <div className="char inline-block">
+                                D
+                            </div>
+                        </div>
+                        <div className="word mr-2 inline-block">
+                            <div className="char inline-block">
+                                H
+                            </div>
+                            <div className="char inline-block">
+                                a
+                            </div>
+                            <div className="char inline-block">
+                                s
+                            </div>
+                            <div className="char inline-block">
+                                e
+                            </div>
+                            <div className="char inline-block">
+                                e
+                            </div>
+                            <div className="char inline-block">
+                                b
+                            </div>
+                        </div>
+                    </div>
+                    <div className="animatedtext text-3xl md:text-6xl font-bold mb-8">
+                        <span id="animated-text"></span>
+                        <span id="cursor">|</span>
+                    </div>
+                    <div className="bottomtext normal-case text-2xl lg:text-4xl">based in Lahore, Pakistan.</div>
+                </h4>
+            </div>
+            <div className="imageWrapper flex-none relative">
+                <div className={`${styles.waves} opacity-100 group-hover:opacity-0 transition-opacity duration-300`}>
+                        <span className={`${styles.wavesTopSpan} topwaves top-[0px] opacity-100`}></span>
+                        <span className={`${styles.wavesTopSpan} topwaves top-[-12px] opacity-80`}></span>
+                        <span className={`${styles.wavesTopSpan} topwaves top-[-25px] opacity-60`}></span>
+                        <span className={`${styles.wavesTopSpan} topwaves top-[-37px] opacity-40`}></span>
+                        <span className={`${styles.wavesTopSpan} topwaves top-[-50px] opacity-20`}></span>
+                    </div>
+                    <Image src="/assets/IMG_5733.png" width={100} height={100} alt="Haseeb" className="group-hover:opacity-100 w-80 h-80 object-cover rounded-full overflow-hidden" unoptimized/>
+                    <div className={`${styles.wavesBottom} opacity-100 group-hover:opacity-0 transition-opacity duration-300`}>
+                        <span className={`${styles.wavesBottomSpan} bottomWaves top-[0px] opacity-100`}></span>
+                        <span className={`${styles.wavesBottomSpan} bottomWaves top-[12px] opacity-80`}></span>
+                        <span className={`${styles.wavesBottomSpan} bottomWaves top-[25px] opacity-60`}></span>
+                        <span className={`${styles.wavesBottomSpan} bottomWaves top-[37px] opacity-40`}></span>
+                        <span className={`${styles.wavesBottomSpan} bottomWaves top-[50px] opacity-20`}></span>
+                    </div>
+                </div>
+        </div>
+    )
+}
