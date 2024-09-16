@@ -62,7 +62,7 @@ export default function Hero() {
     >
       <div className={`${styles.absoluteOverlay}`}></div>
       <div className="max-w-5xl max-md:max-w-md mx-auto">
-        <div className="grid md:grid-cols-2 items-center gap-12">
+        <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center gap-12">
           <div>
             <h2 className={`${lusitana.className} text-black lg:text-5xl md:text-4xl text-3xl font-bold mb-4 lg:!leading-[55px] title`}>
               Hello!
@@ -92,10 +92,10 @@ export default function Hero() {
               </Link>
             </div>
           </div>
-          <div id="sheikhsImg" className="absolute inset-y-0 right-0 w-1/2">
+          <div id="sheikhsImg" className="static inset-y-0 right-0 w-full md:absolute sm:w-1/2">
             <Image
               src="/assets/portfoliopic.jpg"
-              className="shrink-0 w-full h-full object-contain rounded-tl-full rounded-bl-full"
+              className="shrink-0 w-full h-full object-contain sm:rounded-tl-full sm:rounded-bl-full rounded-none"
               width={100}
               height={100}
               unoptimized
