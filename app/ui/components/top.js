@@ -76,11 +76,11 @@ export default function Top() {
                             </div>
                         </div>
                         <div className="word mr-2 inline-block">
-                            <div className="char inline-block">
+                            <div className="char inline-block mr-2">
                                 I
                             </div>
                             <div className="char inline-block">
-                            &apos
+                                A
                             </div>
                             <div className="char inline-block">
                                 M
