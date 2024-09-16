@@ -18,14 +18,12 @@ export default function Page() {
       ...formData,
       [e.target.name]: e.target.value,
     });
-    console.log(e, "FormData",formData);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("FormData", formData);
 
     try {
-        const response = await fetch('/api/emailhaseeb', {
+        const response = await fetch('/api/send-email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -18,7 +18,6 @@ export async function POST(request) {
       message: 'Hello, this is a POST request!',
       receivedData: body,
   };
-  console.log('Received Form:', data)
   
 
 const transporter = nodemailer.createTransport({
