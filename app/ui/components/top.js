@@ -80,7 +80,7 @@ export default function Top() {
                                 I
                             </div>
                             <div className="char inline-block">
-                                '
+                            &apos
                             </div>
                             <div className="char inline-block">
                                 M
