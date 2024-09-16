@@ -22,12 +22,12 @@ export async function POST(request) {
   
 
 const transporter = nodemailer.createTransport({
-  host: "mail.muhammadhaseeb.site",
+  host: "smtp.google.com",
   port: 465,
   secure: true, // Us `true` for port 465, `false` for all other ports
   auth: {
-    user: process.env.USERNAME,
-    pass: process.env.PASSWORD,
+    user: process.env.USERNAMEGMAIL,
+    pass: process.env.PASSWORDGMAIL,
   },
 });
 console.log("transporter", transporter);
@@ -36,7 +36,7 @@ console.log("transporter", transporter);
 async function main() {
   // send mail with defined transport object
   const info = await transporter.sendMail({
-    from: process.env.USERNAME, // sender address
+    from: process.env.USERNAMEGMAIL, // sender address
     to: body.to, // list of receivers
     subject: body.subject, // Subject line
     //text: body.message, // plain text body
