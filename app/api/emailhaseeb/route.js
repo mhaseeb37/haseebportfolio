@@ -18,29 +18,28 @@ export async function POST(request) {
       message: 'Hello, this is a POST request!',
       receivedData: body,
   };
-  console.log('Received Form:', body)
+  console.log('Received Form:', data)
   
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.google.com",
+  host: "smtp.gmail.com",
   port: 465,
-  secure: true, // Us `true` for port 465, `false` for all other ports
+  secure: true, // Use `true` for port 465, `false` for all other ports
   auth: {
     user: process.env.USERNAMEGMAIL,
     pass: process.env.PASSWORDGMAIL,
   },
 });
-console.log("transporter", transporter);
 
 // async..await is not allowed in global scope, must use a wrapper
 async function main() {
   // send mail with defined transport object
   const info = await transporter.sendMail({
-    from: process.env.USERNAMEGMAIL, // sender address
+    from: 'mhaseeb37@gmail.com', // sender address
     to: body.to, // list of receivers
     subject: body.subject, // Subject line
-    //text: body.message, // plain text body
-    html: `<b>First Name: </b>${body.firstName}</br><b>Last Name: </b>${body.lastName}</br><b>Phone No: </b>${body.phone}</br><b>Message: </b>${body.message}`, // html body
+    text: body.message, // plain text body
+    //html: "<b>Hello world?</b>", // html body
   });
 
   console.log("Message sent: %s", info.messageId);
