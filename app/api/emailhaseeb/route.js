@@ -1,42 +1,53 @@
+import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-export default async function handler(req, res) {
-  if (req.method === 'GET') {
-    // Handle GET request
+// For handling GET requests
+export async function GET() {
+    // Example response data
     const data = { message: 'Hello, this is a GET request!' };
-    return res.status(200).json(data);
-  } else if (req.method === 'POST') {
-    try {
-      const body = req.body;
+    return NextResponse.json(data);
+}
 
-      // Create Nodemailer transporter
-      const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
-        auth: {
-          user: process.env.USERNAMEGMAIL,
-          pass: process.env.PASSWORDGMAIL,
-        },
-      });
+// For handling POST requests
+export async function POST(request) {
+  // Parse the request body
+  const body = await request.json();
 
-      // Send email using the transporter
-      const info = await transporter.sendMail({
-        from: process.env.USERNAMEGMAIL, // sender address
-        to: body.to, // list of receivers
-        subject: body.subject, // Subject line
-        text: body.message, // plain text body
-      });
+  // Example response data
+  const data = {
+      message: 'Hello, this is a POST request!',
+      receivedData: body,
+  };
+  console.log('Received Form:', data)
+  
 
-      console.log('Message sent: %s', info.messageId);
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true, // Use `true` for port 465, `false` for all other ports
+  auth: {
+    user: process.env.USERNAMEGMAIL,
+    pass: process.env.PASSWORDGMAIL,
+  },
+});
 
-      // Send success response
-      return res.status(200).json({ message: 'Email sent successfully!' });
-    } catch (error) {
-      console.error('Error sending email:', error);
-      return res.status(500).json({ message: 'Failed to send email', error });
-    }
-  } else {
-    return res.status(405).json({ message: 'Method not allowed' });
-  }
+// async..await is not allowed in global scope, must use a wrapper
+async function main() {
+  // send mail with defined transport object
+  const info = await transporter.sendMail({
+    from: process.env.USERNAMEGMAIL, // sender address
+    to: body.to, // list of receivers
+    subject: body.subject, // Subject line
+    text: body.message, // plain text body
+    //html: "<b>Hello world?</b>", // html body
+  });
+
+  console.log("Message sent: %s", info.messageId);
+  // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
+}
+
+main().catch(console.error);
+
+
+  return NextResponse.json(data);
 }
