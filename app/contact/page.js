@@ -13,23 +13,19 @@ export default function Page() {
     message: "",
     subject: "General Inquiry",
   });
-//   const [selectedValue, setSelectedValue] = useState("General Inquiry"); // Default value htmlFor the first radio
-
-//   const handleRadioChange = (e) => {
-//     setSelectedValue(e.target.value); // Update the selected radio button
-//   };
   const handleOnChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+    console.log(e, "FormData",formData);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("FormData", formData);
 
     try {
-        const response = await fetch('/api/send-email', {
+        const response = await fetch('/api/emailhaseeb', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -37,7 +33,20 @@ export default function Page() {
             body: JSON.stringify(formData),
         });
 
-        const result = await response.json();
+        // Check if the response is okay (status code 200-299)
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
+        }
+
+        // Only attempt to parse JSON if content exists
+        const contentType = response.headers.get('Content-Type');
+        let result = {};
+        if (contentType && contentType.includes('application/json')) {
+            result = await response.json();
+        } else {
+            throw new Error('Invalid JSON response');
+        }
+
         // Reset the form data
         setFormData({
             firstName: "",
@@ -46,15 +55,16 @@ export default function Page() {
             to: "",
             message: "",
             subject: "General Inquiry",
-          });
-        alert(result.message); // Notify user of success
+        });
 
-        
+        alert(result.message || 'Email sent successfully'); // Notify user of success
+
     } catch (error) {
         console.error('Error:', error);
-        alert('An error occurred. Please try again.'); // Notify user of error
+        alert(`An error occurred: ${error.message}. Please try again.`); // Notify user of error
     }
-}
+};
+
   
   return (
     <div className="mt-32 max-w-5xl max-lg:max-w-3xl mx-auto bg-white my-6 font-[sans-serif]">

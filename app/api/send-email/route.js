@@ -1,33 +1,43 @@
-import { NextResponse } from 'next/server';
-import { ServerClient } from 'postmark';
+// import { NextResponse } from 'next/server';
+// import { Resend } from 'resend';
 
-const client = new ServerClient(process.env.POSTMARK_API_KEY);
-export async function GET() {
-    // Example response data
-    const data = { message: 'Hello, this is a GET request! from send email route' };
-    return NextResponse.json(data);
-}
-export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    console.log(req.body);
-    const { to, subject, message } = req.body;
+// const resend = new Resend(process.env.RESEND_API_KEY);
+// console.log("ENV", process.env.RESEND_API_KEY);
 
-    try {
-        const response = await client.sendEmail({
-            From: process.env.POSTMARK_FROM_EMAIL,  // Sender's email from environment variable
-            To: to,
-            Subject: subject,
-            TextBody: message,
-            HtmlBody: `<html><body><strong>${message}</strong></body></html>`,
-            MessageStream: 'outbound',  // Use 'outbound' for regular emails
-          });
+// export async function GET() {
+//     // Handle GET request
+//     const data = { message: 'Hello, this is a GET request! from send email route' };
+//     return NextResponse.json(data);
+// }
 
-      res.status(200).json({ message: 'Email sent successfully', response });
-    } catch (error) {
-      console.error('Error sending email:', error);
-      res.status(500).json({ message: 'Error sending email', error });
-    }
-  } else {
-    res.status(405).json({ message: 'Method not allowed' });
-  }
-}
+// export async function POST(request) {
+//     try {
+//         // Parse the incoming request body
+//         const { to, subject, message, firstName, lastName, phone } = await request.json();
+//         console.log("Parsed Request Body:", { to, subject, message, firstName, lastName, phone });
+
+//         // Send the email using Resend
+//         const { data, error } = await resend.emails.send({
+//             from: "info@muhammadhaseeb.site",
+//             to: [to],
+//             subject: subject,
+//             html: `<strong>First Name:</strong> ${firstName} <br/>
+//                    <strong>Last Name:</strong> ${lastName} <br/>
+//                    <strong>Message:</strong> ${message} <br/>
+//                    <strong>Phone:</strong> ${phone}`
+//         });
+
+//         // Handle any errors from the Resend API
+//         if (error) {
+//             return NextResponse.json({ error: error.message }, { status: 400 });
+//         }
+
+//         // Return a success response
+//         return NextResponse.json({ message: 'Email sent successfully!', data }, { status: 200 });
+
+//     } catch (error) {
+//         console.error("Error sending email:", error);
+//         // Return error response
+//         return NextResponse.json({ message: 'Error sending email', error: error.message }, { status: 500 });
+//     }
+// }
