@@ -16,14 +16,10 @@ export default function About() {
         <div className="grid grid-cols-12 mt-8 gap-4 py-4">
           <div className="col-span-12 md:col-span-8">
             <h2 className="text-4xl font-semibold leading-loose">
-              I'm Muhammad Haseeb, a Web Developer
+              {'I\'m Muhammad Haseeb, a Web Developer'}
             </h2>
             <p className="text-2xl font-normal">
-              I'm a designer & developer with a passion for web design. I enjoy
-              developing simple, clean and slick websites that provide real
-              value to the end user. Thousands of clients have procured
-              exceptional results while working with me. Delivering work within
-              time and budget which meets client's requirements is our moto.
+              {'I\'m a designer & developer with a passion for web design. I enjoy developing simple, clean and slick websites that provide real value to the end user. Thousands of clients have procured exceptional results while working with me. Delivering work within time and budget which meets client\'s requirements is our moto.'}
             </p>
             <div className="infoGrids grid grid-cols-3 mt-5 text-[16px]">
               <div>
