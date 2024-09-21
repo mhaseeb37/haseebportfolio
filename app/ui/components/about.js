@@ -10,34 +10,38 @@ export default function About() {
     const container = useRef();
 
     //const body = document.querySelector('body');
+    const body = typeof document !== 'undefined' ? document.querySelector('body') : null;
+    
     useGSAP(()=>{
-        // body.addEventListener('mousemove',function(e){
-        //     // Get the element's bounding box
-        //     const rect = body.getBoundingClientRect();
+        if(body){
+        body.addEventListener('mousemove',function(e){
+            // Get the element's bounding box
+            const rect = body.getBoundingClientRect();
             
-        //     // Calculate the cursor position relative to the element
-        //     const x = e.clientX - rect.left;  // X-coordinate inside the element
-        //     const y = e.clientY - rect.top;   // Y-coordinate inside the element
+            // Calculate the cursor position relative to the element
+            const x = e.clientX - rect.left;  // X-coordinate inside the element
+            const y = e.clientY - rect.top;   // Y-coordinate inside the element
 
-        //     // Calculate the shadow offset based on cursor position (center it)
-        //     const offsetX = (x - rect.width / 2) / 150;
-        //     const offsetY = (y - rect.height / 2) / 150;
+            // Calculate the shadow offset based on cursor position (center it)
+            const offsetX = (x - rect.width / 2) / 150;
+            const offsetY = (y - rect.height / 2) / 150;
 
-        //     // Use GSAP to animate the shadow position dynamically
-        //     gsap.to(".expOutlineOne", {
-        //         x: offsetX,
-        //         y: offsetY,
-        //         ease: 'power3.out',
-        //         duration: 0.3
-        //     });
-        //     gsap.to(".expOutlineTwo", {
-        //         x: offsetX + 5,
-        //         y: offsetY + 5,
-        //         ease: 'power3.out',
-        //         duration: 0.3
-        //     });
-        //     
-        // });
+            // Use GSAP to animate the shadow position dynamically
+            gsap.to(".expOutlineOne", {
+                x: offsetX,
+                y: offsetY,
+                ease: 'power3.out',
+                duration: 0.1
+            });
+            gsap.to(".expOutlineTwo", {
+                x: offsetX + 5,
+                y: offsetY + 5,
+                ease: 'power3.out',
+                duration: 0.1
+            });
+            
+        });
+    }
         gsap.to('.titleOverlay',{
             scrollTrigger:{
                 trigger:'.titleOverlay',
