@@ -2,7 +2,7 @@ import { poppins, lusitana } from "../fonts";
 
 export default function About() {
   return (
-    <div className={`${poppins.className} aboutwrapper pt-32  text-black`}>
+    <div className={`${poppins.className} aboutwrapper pt-32 w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl text-black`}>
       <div className="aboutAboveWrapper relative">
         <span
           className={`${lusitana.className} titleOverlay absolute font-bold top-[-50px] left-0 uppercase text-[64px] md:text-9xl opacity-5`}
@@ -15,13 +15,13 @@ export default function About() {
         </div>
         <div className="grid grid-cols-12 mt-8 gap-4 py-4">
           <div className="col-span-12 md:col-span-8">
-            <h2 className="text-4xl font-semibold leading-loose">
+            <h2 className="text-4xl font-semibold leading-none mb-3">
               {'I\'m Muhammad Haseeb, a Web Developer'}
             </h2>
-            <p className="text-2xl font-normal">
+            <p className="text-xl font-normal">
               {'I\'m a designer & developer with a passion for web design. I enjoy developing simple, clean and slick websites that provide real value to the end user. Thousands of clients have procured exceptional results while working with me. Delivering work within time and budget which meets client\'s requirements is our moto.'}
             </p>
-            <div className="infoGrids grid grid-cols-3 mt-5 text-[16px]">
+            <div className="infoGrids grid grid-cols-3 mt-5 text-[14px]">
               <div>
                 <p>Email:</p>
                 <a href="mailto:info@muhammadhaseeb.site">

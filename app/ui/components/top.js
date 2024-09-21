@@ -61,7 +61,7 @@ export default function Top() {
     },[{ scope: container }]);
 
     return(
-        <div className="topWrapper flex flex-wrap justify-center gap-y-14 items-center w-full md:max-w-3xl lg:max-w-4xl xl:max-w-5xl py-16" ref={container}>
+        <div className="topWrapper flex flex-wrap justify-center gap-y-14 items-center w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl py-16" ref={container}>
             <div className="textWrapper flex-1">
                 <h4 className={`${poppins.className} font-normal uppercase text-black leading-none`}>
                     <div className="toptext text-2xl lg:text-4xl mb-8">
