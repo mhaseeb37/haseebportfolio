@@ -1,8 +1,44 @@
+"use client";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { poppins, lusitana } from "../fonts";
 
 export default function About() {
+    const container = useRef();
+
+    const body = document.querySelector('body');
+    useGSAP(()=>{
+        body.addEventListener('mousemove',function(e){
+            // Get the element's bounding box
+            const rect = body.getBoundingClientRect();
+            
+            // Calculate the cursor position relative to the element
+            const x = e.clientX - rect.left;  // X-coordinate inside the element
+            const y = e.clientY - rect.top;   // Y-coordinate inside the element
+
+            // Calculate the shadow offset based on cursor position (center it)
+            const offsetX = (x - rect.width / 2) / 150;
+            const offsetY = (y - rect.height / 2) / 150;
+
+            // Use GSAP to animate the shadow position dynamically
+            gsap.to(".expOutlineOne", {
+                x: offsetX,
+                y: offsetY,
+                ease: 'power3.out',
+                duration: 0.3
+            });
+            gsap.to(".expOutlineTwo", {
+                x: offsetX + 5,
+                y: offsetY + 5,
+                ease: 'power3.out',
+                duration: 0.3
+            });
+        });
+    });
+
   return (
-    <div className={`${poppins.className} aboutwrapper pt-32 w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl text-black`}>
+    <div className={`${poppins.className} aboutwrapper pt-32 w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl text-black`} ref={container}>
       <div className="aboutAboveWrapper relative">
         <span
           className={`${lusitana.className} titleOverlay absolute font-bold top-[-50px] left-0 uppercase text-[64px] md:text-9xl opacity-5`}
@@ -44,7 +80,17 @@ export default function About() {
             </div>
           </div>
           <div className="col-span-12 md:col-span-4 relative border bg-[#ffdb67] p-10 border-[#000000] before:block before:absolute before:-inset-0 before:rotate-2 before:w-full before:border before:border-[#000000] before:z-[-1] before:transition-transform before:duration-300 after:block after:absolute after:-inset-0 after:-rotate-2 after:w-full after:border after:border-[#000000] after:z-[-1] after:transition-transform after:duration-300 hover:before:rotate-0 hover:after:rotate-0">
-            <div className="yearsExpWrapper"></div>
+            <div className="group yearsExpWrapper relative flex justify-center font-bold">
+                <span className="expOutlineOne absolute inset-0 text-center text-[200px] translate-x-1 translate-y-1 group-hover:hidden" style={{
+                    WebkitTextStroke: '1px #000',
+                    WebkitTextFillColor: 'rgba(0, 0, 0, 0)',
+                }}>7</span>
+                <span className="expOutlineTwo absolute inset-0 text-center text-[200px] translate-x-2 translate-y-2 group-hover:hidden" style={{
+                    WebkitTextStroke: '1px #000',
+                    WebkitTextFillColor: 'rgba(0, 0, 0, 0)',
+                }}>7</span>
+                <span className="expNumber text-[200px]">7</span>
+            </div>
           </div>
         </div>
       </div>
