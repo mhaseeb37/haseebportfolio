@@ -80,12 +80,12 @@ export default function About() {
             </div>
           </div>
           <div className="col-span-12 md:col-span-4 relative border bg-[#ffdb67] p-10 border-[#000000] before:block before:absolute before:-inset-0 before:rotate-2 before:w-full before:border before:border-[#000000] before:z-[-1] before:transition-transform before:duration-300 after:block after:absolute after:-inset-0 after:-rotate-2 after:w-full after:border after:border-[#000000] after:z-[-1] after:transition-transform after:duration-300 hover:before:rotate-0 hover:after:rotate-0">
-            <div className="group yearsExpWrapper relative flex justify-center font-bold">
-                <span className="expOutlineOne absolute inset-0 text-center text-[200px] translate-x-1 translate-y-1 group-hover:hidden" style={{
+            <div className="group yearsExpWrapper relative flex justify-center font-bold transition-all">
+                <span className="expOutlineOne absolute inset-0 text-center text-[200px] translate-x-1 translate-y-1 group-hover:hidden transition-all duration-300" style={{
                     WebkitTextStroke: '1px #000',
                     WebkitTextFillColor: 'rgba(0, 0, 0, 0)',
                 }}>7</span>
-                <span className="expOutlineTwo absolute inset-0 text-center text-[200px] translate-x-2 translate-y-2 group-hover:hidden" style={{
+                <span className="expOutlineTwo absolute inset-0 text-center text-[200px] translate-x-2 translate-y-2 group-hover:hidden transition-all duration-300" style={{
                     WebkitTextStroke: '1px #000',
                     WebkitTextFillColor: 'rgba(0, 0, 0, 0)',
                 }}>7</span>
