@@ -2,38 +2,51 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { poppins, lusitana } from "../fonts";
 
+gsap.registerPlugin(ScrollTrigger);
 export default function About() {
     const container = useRef();
 
-    const body = document.querySelector('body');
+    //const body = document.querySelector('body');
     useGSAP(()=>{
-        body.addEventListener('mousemove',function(e){
-            // Get the element's bounding box
-            const rect = body.getBoundingClientRect();
+        // body.addEventListener('mousemove',function(e){
+        //     // Get the element's bounding box
+        //     const rect = body.getBoundingClientRect();
             
-            // Calculate the cursor position relative to the element
-            const x = e.clientX - rect.left;  // X-coordinate inside the element
-            const y = e.clientY - rect.top;   // Y-coordinate inside the element
+        //     // Calculate the cursor position relative to the element
+        //     const x = e.clientX - rect.left;  // X-coordinate inside the element
+        //     const y = e.clientY - rect.top;   // Y-coordinate inside the element
 
-            // Calculate the shadow offset based on cursor position (center it)
-            const offsetX = (x - rect.width / 2) / 150;
-            const offsetY = (y - rect.height / 2) / 150;
+        //     // Calculate the shadow offset based on cursor position (center it)
+        //     const offsetX = (x - rect.width / 2) / 150;
+        //     const offsetY = (y - rect.height / 2) / 150;
 
-            // Use GSAP to animate the shadow position dynamically
-            gsap.to(".expOutlineOne", {
-                x: offsetX,
-                y: offsetY,
-                ease: 'power3.out',
-                duration: 0.3
-            });
-            gsap.to(".expOutlineTwo", {
-                x: offsetX + 5,
-                y: offsetY + 5,
-                ease: 'power3.out',
-                duration: 0.3
-            });
+        //     // Use GSAP to animate the shadow position dynamically
+        //     gsap.to(".expOutlineOne", {
+        //         x: offsetX,
+        //         y: offsetY,
+        //         ease: 'power3.out',
+        //         duration: 0.3
+        //     });
+        //     gsap.to(".expOutlineTwo", {
+        //         x: offsetX + 5,
+        //         y: offsetY + 5,
+        //         ease: 'power3.out',
+        //         duration: 0.3
+        //     });
+        //     
+        // });
+        gsap.to('.titleOverlay',{
+            scrollTrigger:{
+                trigger:'.titleOverlay',
+                start: "top 80%",
+                end: "bottom top",
+                scrub: true
+            },
+            yPercent: -80,
+            duration:3
         });
     });
 
@@ -41,7 +54,7 @@ export default function About() {
     <div className={`${poppins.className} aboutwrapper pt-32 w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl text-black`} ref={container}>
       <div className="aboutAboveWrapper relative">
         <span
-          className={`${lusitana.className} titleOverlay absolute font-bold top-[-50px] left-0 uppercase text-[64px] md:text-9xl opacity-5`}
+          className={`${lusitana.className} titleOverlay absolute font-bold top-0 left-0 uppercase text-[64px] md:text-9xl opacity-5`}
         >
           About Me
         </span>
