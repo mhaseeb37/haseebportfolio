@@ -95,7 +95,7 @@ export default function Hero() {
           <div id="sheikhsImg" className="static inset-y-0 right-0 w-full md:absolute sm:w-1/2">
             <Image
               src="/assets/portfoliopic.jpg"
-              className="shrink-0 w-full h-full object-contain sm:rounded-tl-full sm:rounded-bl-full rounded-none"
+              className="shrink-0 w-full h-full mx-auto object-contain sm:rounded-tl-full sm:rounded-bl-full rounded-none"
               width={100}
               height={100}
               unoptimized

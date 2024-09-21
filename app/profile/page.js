@@ -6,6 +6,7 @@ import { TextPlugin } from "gsap/TextPlugin";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Sidebar from "@/app/ui/components/sidebar";
 import Top from "../ui/components/top";
+import About from "../ui/components/about";
 import styles from "@/app/ui/custom.module.css"
 
 // Register the TextPlugin
@@ -17,7 +18,7 @@ export default function Page(){
     
   }, [{ scope: container }]);
     return(
-        <div className="relative bg-white flex h-screen flex-col md:flex-row">
+        <div className="relative bg-white h-screen">
             <div className={`${styles.overlay} fixed z-20 w-auto min-w-full min-h-full max-w-none`}></div>
         <video
           autoPlay
@@ -31,11 +32,12 @@ export default function Page(){
           />
           Your browser does not support the video tag.
         </video>
-            <div className="w-full flex h-screen flex-col md:flex-row mt-32 z-40" ref={container}>
-                <div className="w-full pl-10">
+            <div className="w-full h-screen z-40 relative pt-[100px]" ref={container}>
+                <div className="w-full px-3 md:pl-10">
                     <Top />
+                    <About />
                 </div>
-                <div className="relative w-full flex-none md:w-64 text-black">
+                <div className="relative w-full hidden md:block flex-none md:w-64 text-black">
                     <Sidebar />
                 </div>
             </div>
