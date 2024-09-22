@@ -15,22 +15,22 @@ export default function Sliderslick(props){
     return(
         <Slider {...settings}>
             <div className="p-10">
-                <Slidebox number={1}/>
+                <Slidebox />
             </div>
-            <div className="p-10">
-                <Slidebox number={2}/>
+            <div>
+                <h3>2</h3>
             </div>
-            <div className="p-10">
-                <Slidebox number={3}/> 
+            <div>
+                <h3>3</h3>
             </div>
-            <div className="p-10">
-                <Slidebox number={4}/>
+            <div>
+                <h3>4</h3>
             </div>
-            <div className="p-10">
-                <Slidebox number={5}/>
+            <div>
+                <h3>5</h3>
             </div>
-            <div className="p-10">
-                <Slidebox number={6}/>
+            <div>
+                <h3>6</h3>
             </div>
          </Slider>
     )
