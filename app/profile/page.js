@@ -7,6 +7,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Sidebar from "@/app/ui/components/sidebar";
 import Top from "../ui/components/top";
 import About from "../ui/components/about";
+import Services from "../ui/components/services";
 import styles from "@/app/ui/custom.module.css"
 
 // Register the TextPlugin
@@ -36,6 +37,7 @@ export default function Page(){
                 <div className="w-full px-3 md:pl-10">
                     <Top />
                     <About />
+                    <Services />
                 </div>
                 <div className="relative w-full hidden md:block flex-none md:w-64 text-black">
                     <Sidebar />

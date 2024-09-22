@@ -1,71 +1,12 @@
-"use client";
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import { poppins, lusitana } from "../fonts";
+import { poppins } from "../fonts";
+import Titleoverlay from "./titleoverlay";
+import OutlineNumber from "./outlinenumber";
 
-gsap.registerPlugin(ScrollTrigger);
 export default function About() {
-    const container = useRef();
-
-    //const body = document.querySelector('body');
-    const body = typeof document !== 'undefined' ? document.querySelector('body') : null;
-    
-    useGSAP(()=>{
-        if(body){
-        body.addEventListener('mousemove',function(e){
-            // Get the element's bounding box
-            const rect = body.getBoundingClientRect();
-            
-            // Calculate the cursor position relative to the element
-            const x = e.clientX - rect.left;  // X-coordinate inside the element
-            const y = e.clientY - rect.top;   // Y-coordinate inside the element
-
-            // Calculate the shadow offset based on cursor position (center it)
-            const offsetX = (x - rect.width / 2) / 150;
-            const offsetY = (y - rect.height / 2) / 150;
-
-            // Use GSAP to animate the shadow position dynamically
-            gsap.to(".expOutlineOne", {
-                x: offsetX,
-                y: offsetY,
-                ease: 'power3.out',
-                duration: 0.1
-            });
-            gsap.to(".expOutlineTwo", {
-                x: offsetX + 5,
-                y: offsetY + 5,
-                ease: 'power3.out',
-                duration: 0.1
-            });
-            
-        });
-    }
-        gsap.to('.titleOverlay',{
-            scrollTrigger:{
-                trigger:'.titleOverlay',
-                start: "top 80%",
-                end: "bottom top",
-                scrub: true
-            },
-            yPercent: -80,
-            duration:3
-        });
-    });
-
   return (
-    <div className={`${poppins.className} aboutwrapper pt-32 w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl text-black`} ref={container}>
-      <div className="aboutAboveWrapper relative">
-        <span
-          className={`${lusitana.className} titleOverlay absolute font-bold top-0 left-0 uppercase text-[64px] md:text-9xl opacity-5`}
-        >
-          About Me
-        </span>
-        <div className="mainTitleWrapper py-8 pl-14 pt-11 border-l-2 border-[#000000]">
-          <h4 className="text-[16px] md:text-[24px] font-semibold">Some Words About Me</h4>
-          <h2 className="text-2xl md:text-[80px] font-bold leading-none">Know Me More</h2>
-        </div>
+    <div className={`${poppins.className} aboutwrapper pt-32 w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl text-black`}>
+      <div className="mainWrapper">
+        <Titleoverlay overlayText="About Me" subTitle="Some Words About Me" mainTitle="Know Me More"/>
         <div className="grid grid-cols-12 mt-8 gap-4 py-4">
           <div className="col-span-12 md:col-span-8">
             <h2 className="text-4xl font-semibold leading-none mb-3">
@@ -97,17 +38,7 @@ export default function About() {
             </div>
           </div>
           <div className="col-span-12 md:col-span-4 relative border bg-[#ffdb67] p-10 border-[#000000] before:block before:absolute before:-inset-0 before:rotate-2 before:w-full before:border before:border-[#000000] before:z-[-1] before:transition-transform before:duration-300 after:block after:absolute after:-inset-0 after:-rotate-2 after:w-full after:border after:border-[#000000] after:z-[-1] after:transition-transform after:duration-300 hover:before:rotate-0 hover:after:rotate-0">
-            <div className="group yearsExpWrapper relative flex justify-center font-bold transition-all">
-                <span className="expOutlineOne absolute inset-0 text-center text-[200px] translate-x-1 translate-y-1 group-hover:hidden transition-all duration-300" style={{
-                    WebkitTextStroke: '1px #000',
-                    WebkitTextFillColor: 'rgba(0, 0, 0, 0)',
-                }}>7</span>
-                <span className="expOutlineTwo absolute inset-0 text-center text-[200px] translate-x-2 translate-y-2 group-hover:hidden transition-all duration-300" style={{
-                    WebkitTextStroke: '1px #000',
-                    WebkitTextFillColor: 'rgba(0, 0, 0, 0)',
-                }}>7</span>
-                <span className="expNumber text-[200px]">7</span>
-            </div>
+            <OutlineNumber number="7" fontsize={200}/>
           </div>
         </div>
       </div>
