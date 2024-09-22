@@ -5,6 +5,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    'text-[200px]',
+    // Add other dynamically generated classes here
+  ],
   theme: {
     extend: {
       colors: {
