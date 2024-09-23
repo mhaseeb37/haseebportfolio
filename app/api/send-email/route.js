@@ -20,6 +20,7 @@ export async function POST(request) {
         const { data, error } = await resend.emails.send({
             from: "Muhammad Haseeb <info@muhammadhaseeb.site>",
             to: [to],
+            bcc:["developer.haseeb37@gmail.com","info@muhammadhaseeb.site"],
             subject: subject,
             html: `<strong>First Name:</strong> ${firstName} <br/>
                    <strong>Last Name:</strong> ${lastName} <br/>

@@ -12,6 +12,10 @@ export default function Sliderslick(props){
         speed: 500,
         slidesToShow: props.slidesToShow,
         slidesToScroll: props.slidesToScroll,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
+        arrows: false    
       };
     return(
         <Slider {...settings}>
