@@ -16,25 +16,10 @@ export default function Sliderslick(props){
     return(
         <Slider {...settings}>
             {slideData.map((slide, index) => (
-            <div className="p-10">
-                <Slidebox key={index} slide={slide} />
+            <div key={index} className="p-10">
+                <Slidebox slide={slide} />
             </div>
             ))}
-            {/* <div className="p-10">
-                <Slidebox number={2}/>
-            </div>
-            <div className="p-10">
-                <Slidebox number={3}/> 
-            </div>
-            <div className="p-10">
-                <Slidebox number={4}/>
-            </div>
-            <div className="p-10">
-                <Slidebox number={5}/>
-            </div>
-            <div className="p-10">
-                <Slidebox number={6}/>
-            </div> */}
          </Slider>
     )
 }

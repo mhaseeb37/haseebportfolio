@@ -99,6 +99,7 @@ export default function Hero() {
               width={100}
               height={100}
               unoptimized
+              alt="Haseeb"
             />
           </div>
         </div>

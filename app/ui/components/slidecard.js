@@ -25,8 +25,8 @@ export default function Slidecard({data}){
 
             {/* Development List */}
             <ul className="space-y-2">
-                {data.list.map((li)=>(
-                    <li className="flex items-center">
+                {data.list.map((li, index)=>(
+                    <li key={index} className="flex items-center">
                         <span className="mr-2">»</span> {li}
                     </li>
                 ))}
