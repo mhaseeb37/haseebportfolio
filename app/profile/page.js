@@ -9,6 +9,8 @@ import Top from "../ui/components/top";
 import About from "../ui/components/about";
 import Services from "../ui/components/services";
 import styles from "@/app/ui/custom.module.css"
+import Facts from "../ui/components/facts";
+import Experience from "../ui/components/experience";
 
 // Register the TextPlugin
 gsap.registerPlugin(TextPlugin);
@@ -38,6 +40,8 @@ export default function Page(){
                     <Top />
                     <About />
                     <Services />
+                    <Facts />
+                    <Experience />
                 </div>
                 <div className="relative w-full hidden md:block flex-none md:w-64 text-black">
                     <Sidebar />

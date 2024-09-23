@@ -45,3 +45,23 @@ const slideData = [
 }
 ]
 export {slideData};
+
+const experienceData = [
+    {
+        tenure:"APR 2023 - Present",
+        title:"Senior Software Engineer",
+        description:"Spearheaded multiple web development projects, enhancing user experience and functionality. Led a team of developers to successfully launch high-traffic websites."
+    },
+    {
+        tenure:"OCT 2020 - APR 2023",
+        title:"Team Lead CMS (Shopify, Wordpress)",
+        description:"Spearheaded multiple web development projects, enhancing user experience and functionality. Led a team of developers to successfully launch high-traffic websites."
+    },
+    {
+        tenure:"OCT 2018 - FEB 2020",
+        title:"Technical Support Agent",
+        description:"Spearheaded multiple web development projects, enhancing user experience and functionality. Led a team of developers to successfully launch high-traffic websites."
+    }
+]
+
+export {experienceData};

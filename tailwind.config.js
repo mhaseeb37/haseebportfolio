@@ -7,6 +7,8 @@ module.exports = {
   ],
   safelist: [
     'text-[200px]',
+    'text-[100px]',
+    'h-[2px]',
     // Add other dynamically generated classes here
   ],
   theme: {

@@ -41,12 +41,12 @@ export default function OutlineNumber(props){
         }
     });
     return(
-        <div className="group yearsExpWrapper relative flex justify-center font-bold transition-all">
-            <span className={`expOutlineOne absolute inset-0 text-center text-[${props.fontsize}px] translate-x-1 translate-y-1 group-hover:hidden transition-all duration-300`} style={{
+        <div className="group yearsExpWrapper relative flex justify-center font-bold transition-all" ref={container}>
+            <span className={`expOutlineOne absolute inset-0 text-center text-[${props.fontsize}px] ${props.outlinehidden ? 'hidden' : 'group-hover:hidden'} transition-all duration-300`} style={{
                 WebkitTextStroke: '1px #000',
                 WebkitTextFillColor: 'rgba(0, 0, 0, 0)',
             }}>{props.number}</span>
-            <span className={`expOutlineTwo absolute inset-0 text-center text-[${props.fontsize}px] translate-x-2 translate-y-2 group-hover:hidden transition-all duration-300`} style={{
+            <span className={`expOutlineTwo absolute inset-0 text-center text-[${props.fontsize}px] ${props.outlinehidden ? 'hidden' : 'group-hover:hidden'} transition-all duration-300`} style={{
                 WebkitTextStroke: '1px #000',
                 WebkitTextFillColor: 'rgba(0, 0, 0, 0)',
             }}>{props.number}</span>
