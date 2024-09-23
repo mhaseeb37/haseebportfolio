@@ -8,12 +8,13 @@ import { lusitana } from "../fonts";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Titleoverlay(props){
+    let gsapClass = props.overlayText.replace(/\s+/g, '');
     const container = useRef();
     
     useGSAP(()=>{
-        gsap.to('.titleOverlay',{
+        gsap.to(`.${gsapClass}`,{
             scrollTrigger:{
-                trigger:'.titleOverlay',
+                trigger:`.${gsapClass}`,
                 start: "top 80%",
                 end: "bottom top",
                 scrub: true
@@ -24,7 +25,7 @@ export default function Titleoverlay(props){
     });
     return(
         <div className="aboutAboveWrapper relative" ref={container}>
-            <span className={`${lusitana.className} titleOverlay absolute font-bold top-0 left-0 uppercase text-[64px] md:text-9xl opacity-5`}>
+            <span className={`${lusitana.className} ${gsapClass} titleOverlay absolute font-bold top-0 left-0 uppercase text-[64px] md:text-9xl opacity-5`}>
                 {props.overlayText}
             </span>
             <div className="mainTitleWrapper py-8 pl-14 pt-11 border-l-2 border-[#000000]">

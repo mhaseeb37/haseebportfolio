@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slidebox from "./slidebox";
+import { slideData } from "@/app/common/constant";
 
 export default function Sliderslick(props){
     var settings = {
@@ -14,10 +15,12 @@ export default function Sliderslick(props){
       };
     return(
         <Slider {...settings}>
-                        <div className="p-10">
-                <Slidebox number={1}/>
-            </div>
+            {slideData.map((slide, index) => (
             <div className="p-10">
+                <Slidebox key={index} slide={slide} />
+            </div>
+            ))}
+            {/* <div className="p-10">
                 <Slidebox number={2}/>
             </div>
             <div className="p-10">
@@ -31,7 +34,7 @@ export default function Sliderslick(props){
             </div>
             <div className="p-10">
                 <Slidebox number={6}/>
-            </div>
+            </div> */}
          </Slider>
     )
 }

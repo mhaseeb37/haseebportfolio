@@ -58,3 +58,26 @@
     border-top: none;
     border-bottom: 1px solid #000;
 }
+@keyframes btnWavesSmTop {
+    from {
+        transform: translateY(0);
+        opacity: 1
+    }
+
+    to {
+        transform: translateY(-1rem);
+        opacity: 0
+    }
+}
+
+@keyframes btnWavesSmBottom {
+    from {
+        transform: translateY(0);
+        opacity: 1
+    }
+
+    to {
+        transform: translateY(1rem);
+        opacity: 0
+    }
+}
