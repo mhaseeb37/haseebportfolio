@@ -65,3 +65,50 @@ const experienceData = [
 ]
 
 export {experienceData};
+
+const testimonials = [
+    {
+        name:"Sarah Iverson",
+        title:"Website Owner",
+        website:"https://rypgolf.com/",
+        review:"I strongly recommend Muhammad for your shopify and pagefly needs, he is extremely timely with his work! We greatly appreciate all his help he's provided us!"
+    },
+    {
+        name:"Talhah Sidat ",
+        title:"Website Owner",
+        website:"https://tilesparadiseuk.com/",
+        review:"Good developer with strong knowlege in shopify. I will definitely work with him again."
+    },
+    {
+        name:"Mitch Alagich",
+        title:"Website Owner",
+        website:"https://sienna.co/",
+        review:"It was a pleasure working with Muhammad. He did a great job and was very efficient. Very good communication skills and will work with him again."
+    },
+    {
+        name:"Ganna Kurlishchuk",
+        title:"Website Owner",
+        website:"https://zeever.net/",
+        review:"Muhammad is a good designer and he completes his task effectively. Excellent communication, very friendly currently working. He is professional."
+    },
+    {
+        name:"Lady",
+        title:"Website Owner",
+        website:"https://www.bosschicklife.com/",
+        review:"Muhammad is a very good web designer would use him again and again"
+    },
+    {
+        name:"Blake Innes",
+        title:"Website Owner",
+        website:"https://www.hivemindprints.com",
+        review:"Muhammad Haseeb completed his tasks effectively."
+    },
+    {
+        name:"Haley L",
+        title:"Website Owner",
+        website:"https://www.theeasyhomebuyer.com/",
+        review:"Muhammad is a good designer with excellent communication. I'm looking forward to working with him on projects in the future. Thank you!"
+    }
+]
+
+export {testimonials};

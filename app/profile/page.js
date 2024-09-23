@@ -11,6 +11,7 @@ import Services from "../ui/components/services";
 import styles from "@/app/ui/custom.module.css"
 import Facts from "../ui/components/facts";
 import Experience from "../ui/components/experience";
+import Testimonials from "../ui/components/testimonials";
 
 // Register the TextPlugin
 gsap.registerPlugin(TextPlugin);
@@ -42,6 +43,7 @@ export default function Page(){
                     <Services />
                     <Facts />
                     <Experience />
+                    <Testimonials />
                 </div>
                 <div className="relative w-full hidden md:block flex-none md:w-64 text-black">
                     <Sidebar />
