@@ -112,3 +112,15 @@ const testimonials = [
 ]
 
 export {testimonials};
+
+const socialLinks ={
+    facebook:"https://www.facebook.com/IzzUcpian",
+    instagram:"https://www.instagram.com/sheikh_haseeb_/",
+    linkedin:"https://www.linkedin.com/in/muhammad-haseeb-817a7278/",
+    upwork:"https://www.upwork.com/freelancers/~017ab17588b1b72479",
+    phone:"+923224225997",
+    email:"developer.haseeb37@gmail.com",
+    location:"https://maps.app.goo.gl/NvRZgVvwQUTE9Lzo9"
+}
+
+export {socialLinks};
