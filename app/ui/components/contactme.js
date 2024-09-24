@@ -2,7 +2,7 @@ import Titleoverlay from "./titleoverlay";
 import { poppins } from "../fonts";
 import IconBox from "./iconbox";
 import { socialLinks } from "@/app/common/constant";
-import Icon from "./icon";
+import SocialIcon from "./socialicon";
 import ContactForm from "./contactForm";
 
 export default function ContactMe() {
@@ -14,10 +14,10 @@ export default function ContactMe() {
                 <IconBox iconname="envelope" url={`mailto:${socialLinks.email}`} data={socialLinks.email}/>
                 <IconBox iconname="location" url={`${socialLinks.location}`} data="Lahore, Pakistan"/>
                 <div className="flex space-x-4 p-4">
-                    <Icon iconname="facebook" url={`${socialLinks.facebook}`}/>
-                    <Icon iconname="instagram" url={`${socialLinks.instagram}`}/>
-                    <Icon iconname="linkedin" url={`${socialLinks.linkedin}`}/>
-                    <Icon iconname="upwork" url={`${socialLinks.upwork}`}/>
+                    <SocialIcon iconname="facebook" url={`${socialLinks.facebook}`}/>
+                    <SocialIcon iconname="instagram" url={`${socialLinks.instagram}`}/>
+                    <SocialIcon iconname="linkedin" url={`${socialLinks.linkedin}`}/>
+                    <SocialIcon iconname="upwork" url={`${socialLinks.upwork}`}/>
                 </div>
             </div>
             <ContactForm />
