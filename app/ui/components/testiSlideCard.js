@@ -21,7 +21,7 @@ export default function TestimonialCard({ data }) {
                 <p className="text-sm font-bold">{data.title} -- <a href={data.website} className="font-normal">{data.website.replace(/https?:\/\/|\/$/g, '')}</a></p>
 
                 <p className="mt-4 text-base leading-relaxed">
-                    "{data.review}"
+                &quot;{data.review}&quot;
                 </p>
             </div>
         </div>
