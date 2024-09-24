@@ -58,7 +58,7 @@ export default function ContactForm() {
         }
     };
     return (
-      <div className="min-h-screen flex items-center justify-start">
+      <div className="flex items-center justify-start">
         <div className="max-w-4xl w-full p-8">
           <h1 className="text-4xl font-bold mb-6">Leave a Message</h1>
           <form onSubmit={handleSubmit}>
@@ -68,13 +68,13 @@ export default function ContactForm() {
                   type="text"
                   placeholder="First Name"
                   name="firstName"
-                  className="px-2 py-3 bg-transparent w-full text-sm border-b border-gray-300 focus:border-black outline-none"
+                  className="px-2 py-3 bg-transparent placeholder:text-black w-full text-sm border-b border-[#000000] focus:border-black outline-none"
                   value={formData.firstName}
                   onChange={handleOnChange}
                 />
                 <svg
-                  fill="#bbb"
-                  stroke="#bbb"
+                  fill="#000"
+                  stroke="#000"
                   className="w-[18px] h-[18px] absolute right-2"
                   viewBox="0 0 24 24"
                 >
@@ -91,12 +91,12 @@ export default function ContactForm() {
                   type="text"
                   placeholder="Last Name"
                   name="lastName"
-                  className="px-2 py-3 bg-transparent w-full text-sm border-b border-gray-300 focus:border-black outline-none"
+                  className="px-2 py-3 bg-transparent placeholder:text-black w-full text-sm border-b border-[#000000] focus:border-black outline-none"
                   value={formData.lastName}
                   onChange={handleOnChange}
                 />
                 <svg
-                  fill="#bbb"
+                  fill="#000"
                   stroke="#bbb"
                   className="w-[18px] h-[18px] absolute right-2"
                   viewBox="0 0 24 24"
@@ -114,12 +114,12 @@ export default function ContactForm() {
                   type="number"
                   placeholder="Phone No."
                   name="phone"
-                  className="px-2 py-3 bg-transparent text-black w-full text-sm border-b border-gray-300 focus:border-black outline-none"
+                  className="px-2 py-3 bg-transparent placeholder:text-black text-black w-full text-sm border-b border-[#000000] focus:border-black outline-none"
                   value={formData.phone}
                   onChange={handleOnChange}
                 />
                 <svg
-                  fill="#bbb"
+                  fill="#000"
                   className="w-[18px] h-[18px] absolute right-2"
                   viewBox="0 0 64 64"
                 >
@@ -135,13 +135,13 @@ export default function ContactForm() {
                   type="email"
                   placeholder="Email"
                   name="to"
-                  className="px-2 py-3 bg-transparent text-black w-full text-sm border-b border-gray-300 focus:border-black outline-none"
+                  className="px-2 py-3 bg-transparent placeholder:text-black text-black w-full text-sm border-b border-[#000000] focus:border-black outline-none"
                   value={formData.email}
                   onChange={handleOnChange}
                 />
                 <svg
-                  fill="#bbb"
-                  stroke="#bbb"
+                  fill="#000"
+                  stroke="#000"
                   className="w-[18px] h-[18px] absolute right-2"
                   viewBox="0 0 682.667 682.667"
                 >
@@ -173,13 +173,13 @@ export default function ContactForm() {
                 <textarea
                   placeholder="Write Message"
                   name="message"
-                  className="px-2 pt-3 bg-transparent text-black w-full text-sm border-b border-gray-300 focus:border-black outline-none"
+                  className="px-2 pt-3 bg-transparent placeholder:text-black text-black w-full text-sm border-b border-[#000000] focus:border-black outline-none"
                   value={formData.message}
                   onChange={handleOnChange}
                 ></textarea>
                 <svg
-                  fill="#bbb"
-                  stroke="#bbb"
+                  fill="#000"
+                  stroke="#000"
                   className="w-[18px] h-[18px] absolute right-2"
                   viewBox="0 0 682.667 682.667"
                 >
@@ -208,7 +208,7 @@ export default function ContactForm() {
               </div>
 
               <div className="col-span-full">
-                <h6 className="text-sm">Select Subject</h6>
+                <h6 className="text-sm text-gray-800">Select Subject</h6>
                 <div className="flex max-lg:flex-col gap-6 mt-4">
                   <div className="flex items-center">
                     <input
@@ -222,7 +222,7 @@ export default function ContactForm() {
                     />
                     <label
                       htmlFor="radio1"
-                      className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-transparent w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                      className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
                     >
                       <span className="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
                     </label>
@@ -243,7 +243,7 @@ export default function ContactForm() {
                     />
                     <label
                       htmlFor="radio2"
-                      className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-transparent w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                      className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
                     >
                       <span className="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
                     </label>
@@ -264,7 +264,7 @@ export default function ContactForm() {
                     />
                     <label
                       htmlFor="radio3"
-                      className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-transparent w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                      className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
                     >
                       <span className="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
                     </label>
@@ -278,7 +278,7 @@ export default function ContactForm() {
 
             <button
               type="submit"
-              className="mt-12 flex items-center justify-center text-sm max-lg:w-full rounded-lg px-4 py-3 tracking-wide text-white bg-blue-600 hover:bg-blue-700"
+              className="mt-12 flex items-center justify-center text-sm max-lg:w-full rounded-full px-4 py-3 tracking-wide text-white bg-black hover:bg-transparent hover:text-black hover:border hover:border-[#000000] transition-all"
             >
               <svg
                 width="16px"

@@ -12,9 +12,9 @@ export default function Titleoverlay(props){
     const container = useRef();
     
     useGSAP(()=>{
-        gsap.to(`.${gsapClass}`,{
+        gsap.to(`.${gsapClass}.titleOverlay`,{
             scrollTrigger:{
-                trigger:`.${gsapClass}`,
+                trigger:`.${gsapClass}.titleOverlay`,
                 start: "top 80%",
                 end: "bottom top",
                 scrub: true
