@@ -16,6 +16,7 @@
     "gsap": "^3.12.5",
     "next": "14.2.9",
     "nodemailer": "^6.9.15",
+    "phosphor-react": "^1.4.1",
     "react": "^18",
     "react-dom": "^18",
     "react-slick": "^0.30.2",

@@ -4,7 +4,7 @@ import OutlineNumber from "./outlinenumber";
 
 export default function About() {
   return (
-    <div className={`${poppins.className} aboutwrapper pt-32 w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl text-black`}>
+    <div id="aboutme" className={`${poppins.className} aboutwrapper pt-32 w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl text-black`}>
       <div className="mainWrapper">
         <Titleoverlay overlayText="About Me" subTitle="Some Words About Me" mainTitle="Know Me More"/>
         <div className="grid grid-cols-12 mt-8 gap-4 py-4">

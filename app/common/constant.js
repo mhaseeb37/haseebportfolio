@@ -124,3 +124,24 @@ const socialLinks ={
 }
 
 export {socialLinks};
+
+const posts = [
+    {
+      image: '/assets/lesson.jpeg',
+      title: 'Lessons Learned from 07 Years in the Industry',
+      date: 'April 14, 2024',
+      readTime: '3',
+      description: 'In the realm of technology blogging, captivating your audience goes beyond just the written word...',
+      tags: ['Code', 'Guides', 'Tech'],
+    },
+    {
+      image: '/assets/balancing.jpeg',
+      title: 'Balancing Creativity and Usability in Web Design',
+      date: 'April 14, 2024',
+      readTime: '3',
+      description: 'In the realm of technology blogging, captivating your audience goes beyond just the written word...',
+      tags: ['Code', 'Guides', 'Tech'],
+    },
+  ];
+
+  export {posts};
