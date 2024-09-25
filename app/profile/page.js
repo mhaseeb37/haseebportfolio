@@ -14,6 +14,9 @@ import Experience from "../ui/components/experience";
 import Testimonials from "../ui/components/testimonials";
 import ContactMe from "../ui/components/contactme";
 import Blogs from "../ui/components/blogs";
+import Skills from "../ui/components/skills";
+import Projects from "../ui/components/projects";
+import HowIWork from "../ui/components/howwork";
 
 // Register the TextPlugin
 gsap.registerPlugin(TextPlugin);
@@ -43,8 +46,11 @@ export default function Page(){
                     <Top />
                     <About />
                     <Services />
+                    <Skills />
                     <Facts />
                     <Experience />
+                    <Projects/>
+                    <HowIWork/>
                     <Blogs />
                     <Testimonials />
                     <ContactMe />
