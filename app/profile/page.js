@@ -17,7 +17,7 @@ import Blogs from "../ui/components/blogs";
 import Skills from "../ui/components/skills";
 import Projects from "../ui/components/projects";
 import HowIWork from "../ui/components/howwork";
-import Particles from "react-tsparticles";
+import CustomParticles from "../ui/components/particles";
 
 // Register the TextPlugin
 gsap.registerPlugin(TextPlugin);
@@ -29,7 +29,6 @@ export default function Page(){
   }, [{ scope: container }]);
     return(
         <div className="relative h-screen">
-          <Particles/>
             {/* <div className={`${styles.overlay} fixed z-20 w-auto min-w-full min-h-full max-w-none`}></div>
         <video
           autoPlay
@@ -45,17 +44,18 @@ export default function Page(){
         </video> */}
             <div className="w-full h-screen z-40 relative pt-[100px]" ref={container}>
                 <div className="w-full px-3 md:pl-10 bg-black">
-                    <Top />
-                    <About />
-                    <Services />
-                    <Skills />
-                    <Facts />
-                    <Experience />
-                    <Projects/>
-                    <HowIWork/>
-                    <Blogs />
-                    <Testimonials />
-                    <ContactMe />
+                  <CustomParticles />
+                      <Top />
+                      <About />
+                      <Services />
+                      <Skills />
+                      <Facts />
+                      <Experience />
+                      <Projects/>
+                      <HowIWork/>
+                      <Blogs />
+                      <Testimonials />
+                      <ContactMe />
                 </div>
                 <div className="relative w-full hidden md:block flex-none md:w-64 text-white">
                     <Sidebar />
