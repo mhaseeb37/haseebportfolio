@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function TestimonialCard({ data }) {
     return (
-        <div className="flex items-start gap-x-4 relative px-10 py-8 border border-black mr-2 shadow-lg max-w-4xl min-h-52 mx-auto">
+        <div className="flex items-start gap-x-4 relative px-10 py-8 border border-white mr-2 shadow-lg max-w-4xl min-h-52 mx-auto">
             {/* Avatar Section */}
             <div className="">
                 <div className="rounded-full w-24 h-24 overflow-hidden">
@@ -18,7 +18,7 @@ export default function TestimonialCard({ data }) {
             {/* Content Section */}
             <div className="">
                 <h2 className="text-3xl font-bold mb-4">{data.name}</h2>
-                <p className="text-sm font-bold">{data.title} -- <a href={data.website} className="font-normal">{data.website.replace(/https?:\/\/|\/$/g, '')}</a></p>
+                <p className="text-sm font-bold">{data.title} -- <a href={data.website} className="font-normal hover:underline">{data.website.replace(/https?:\/\/|\/$/g, '')}</a></p>
 
                 <p className="mt-4 text-base leading-relaxed">
                 &quot;{data.review}&quot;

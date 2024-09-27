@@ -1,6 +1,6 @@
 export default function Slidecard({data}){
     return(
-        <div className="relative w-full max-w-lg mx-auto">
+        <div className="relative w-full max-w-lg mx-auto text-black">
             <div className="flex items-center justify-center h-20 w-20 rounded-full border border-black text-4xl font-bold relative">
                 <div className="waves-top-sm">
                     <span></span>

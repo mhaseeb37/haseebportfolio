@@ -3,7 +3,7 @@ import Footer from "@/app/ui/layout/footer";
 
 export default function Layout({ children }){
     return(
-    <div className="relative">
+    <div className="relative bg-black">
         <Header />
         {children}
         {/* <Footer /> */}

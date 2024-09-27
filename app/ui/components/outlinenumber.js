@@ -41,7 +41,7 @@ export default function OutlineNumber(props){
         }
     });
     return(
-        <div className="group yearsExpWrapper relative flex justify-center font-bold transition-all" ref={container}>
+        <div className="group yearsExpWrapper relative text-black flex justify-center font-bold transition-all" ref={container}>
             <span className={`expOutlineOne absolute inset-0 text-center text-[${props.fontsize}px] ${props.outlinehidden ? 'hidden' : 'group-hover:hidden'} transition-all duration-300`} style={{
                 WebkitTextStroke: '1px #000',
                 WebkitTextFillColor: 'rgba(0, 0, 0, 0)',

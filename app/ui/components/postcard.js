@@ -8,7 +8,7 @@ export default function PostCard({ image, title, date, readTime, description, ta
             </div>
       <div className="flex flex-col">
         <h2 className="text-2xl font-semibold mb-3">{title}</h2>
-        <div className="text-black text-xl flex items-center space-x-2 mb-2">
+        <div className="text-white text-xl flex items-center space-x-2 mb-2">
           <span className="flex items-center space-x-1">
             <Calendar size={16} weight="bold" />
             <span>{date}</span>
@@ -19,10 +19,10 @@ export default function PostCard({ image, title, date, readTime, description, ta
             <span>{readTime} Min Read</span>
           </span>
         </div>
-        <p className="text-black mt-2 mb-3 pb-6 border-b border-[#00000033]">{description}</p>
+        <p className="text-white mt-2 mb-3 pb-6 border-b border-[#ffffff33]">{description}</p>
         <div className="mt-4 flex space-x-2">
           {tags.map((tag, index) => (
-            <span key={index} className="text-sm font-medium py-1 px-2 rounded relative before:absolute before:content-[''] before:w-1 before:h-1 before:rounded-full before:bg-[#000000] before:left-0 before:top-[42%]">{tag}</span>
+            <span key={index} className="text-sm font-medium py-1 px-2 rounded relative before:absolute before:content-[''] before:w-1 before:h-1 before:rounded-full before:bg-[#ffffff] before:left-0 before:top-[42%]">{tag}</span>
           ))}
         </div>
       </div>

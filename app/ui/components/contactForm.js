@@ -67,13 +67,13 @@ export default function ContactForm() {
                 type="text"
                 placeholder="First Name"
                 name="firstName"
-                className="px-2 py-3 bg-transparent placeholder:text-black w-full text-sm border-b border-[#000000] focus:border-black outline-none"
+                className="px-2 py-3 bg-transparent placeholder:text-white w-full text-sm border-b border-white focus:border-gray-400 outline-none"
                 value={formData.firstName}
                 onChange={handleOnChange}
               />
               <svg
-                fill="#000"
-                stroke="#000"
+                fill="#fff"
+                stroke="#fff"
                 className="w-[18px] h-[18px] absolute right-2"
                 viewBox="0 0 24 24"
               >
@@ -90,12 +90,12 @@ export default function ContactForm() {
                 type="text"
                 placeholder="Last Name"
                 name="lastName"
-                className="px-2 py-3 bg-transparent placeholder:text-black w-full text-sm border-b border-[#000000] focus:border-black outline-none"
+                className="px-2 py-3 bg-transparent placeholder:text-white w-full text-sm border-b border-white focus:border-gray-400 outline-none"
                 value={formData.lastName}
                 onChange={handleOnChange}
               />
               <svg
-                fill="#000"
+                fill="#fff"
                 stroke="#bbb"
                 className="w-[18px] h-[18px] absolute right-2"
                 viewBox="0 0 24 24"
@@ -113,12 +113,12 @@ export default function ContactForm() {
                 type="number"
                 placeholder="Phone No."
                 name="phone"
-                className="px-2 py-3 bg-transparent placeholder:text-black text-black w-full text-sm border-b border-[#000000] focus:border-black outline-none"
+                className="px-2 py-3 bg-transparent placeholder:text-white text-white w-full text-sm border-b border-white focus:border-gray-400 outline-none"
                 value={formData.phone}
                 onChange={handleOnChange}
               />
               <svg
-                fill="#000"
+                fill="#fff"
                 className="w-[18px] h-[18px] absolute right-2"
                 viewBox="0 0 64 64"
               >
@@ -134,13 +134,13 @@ export default function ContactForm() {
                 type="email"
                 placeholder="Email"
                 name="to"
-                className="px-2 py-3 bg-transparent placeholder:text-black text-black w-full text-sm border-b border-[#000000] focus:border-black outline-none"
+                className="px-2 py-3 bg-transparent placeholder:text-white text-white w-full text-sm border-b border-white focus:border-gray-400 outline-none"
                 value={formData.to}
                 onChange={handleOnChange}
               />
               <svg
-                fill="#000"
-                stroke="#000"
+                fill="#fff"
+                stroke="#fff"
                 className="w-[18px] h-[18px] absolute right-2"
                 viewBox="0 0 682.667 682.667"
               >
@@ -172,13 +172,13 @@ export default function ContactForm() {
               <textarea
                 placeholder="Write Message"
                 name="message"
-                className="px-2 pt-3 bg-transparent placeholder:text-black text-black w-full text-sm border-b border-[#000000] focus:border-black outline-none"
+                className="px-2 pt-3 bg-transparent placeholder:text-white text-white w-full text-sm border-b border-white focus:border-gray-400 outline-none"
                 value={formData.message}
                 onChange={handleOnChange}
               ></textarea>
               <svg
-                fill="#000"
-                stroke="#000"
+                fill="#fff"
+                stroke="#fff"
                 className="w-[18px] h-[18px] absolute right-2"
                 viewBox="0 0 682.667 682.667"
               >
@@ -207,7 +207,7 @@ export default function ContactForm() {
             </div>
 
             <div className="col-span-full">
-              <h6 className="text-sm text-gray-800">Select Subject</h6>
+              <h6 className="text-sm text-white">Select Subject</h6>
               <div className="flex max-lg:flex-col gap-6 mt-4">
                 <div className="flex items-center">
                   <input
@@ -221,11 +221,11 @@ export default function ContactForm() {
                   />
                   <label
                     htmlFor="radio1"
-                    className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                    className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#ffffff] rounded-full overflow-hidden"
                   >
-                    <span className="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
+                    <span className="border-[4px] border-[#ffffff] rounded-full w-full h-full"></span>
                   </label>
-                  <p className="text-sm text-gray-500 ml-4">General Inquiry</p>
+                  <p className="text-sm text-white ml-4">General Inquiry</p>
                 </div>
 
                 <div className="flex items-center">
@@ -240,11 +240,11 @@ export default function ContactForm() {
                   />
                   <label
                     htmlFor="radio2"
-                    className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                    className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#ffffff] rounded-full overflow-hidden"
                   >
-                    <span className="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
+                    <span className="border-[4px] border-[#ffffff] rounded-full w-full h-full"></span>
                   </label>
-                  <p className="text-sm text-gray-500 ml-4">
+                  <p className="text-sm text-white ml-4">
                     Technical Support
                   </p>
                 </div>
@@ -261,11 +261,11 @@ export default function ContactForm() {
                   />
                   <label
                     htmlFor="radio3"
-                    className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                    className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#ffffff] rounded-full overflow-hidden"
                   >
-                    <span className="border-[4px] border-[#011c2b] rounded-full w-full h-full"></span>
+                    <span className="border-[4px] border-[#ffffff] rounded-full w-full h-full"></span>
                   </label>
-                  <p className="text-sm text-gray-500 ml-4">
+                  <p className="text-sm text-white ml-4">
                     Website Development
                   </p>
                 </div>
@@ -275,13 +275,13 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            className="mt-12 flex items-center justify-center text-sm max-lg:w-full rounded-full px-4 py-3 tracking-wide text-white bg-black hover:bg-transparent hover:text-black hover:border hover:border-[#000000] transition-all"
+            className="group mt-12 flex items-center justify-center text-sm max-lg:w-full rounded-full px-4 py-3 tracking-wide text-black bg-white hover:bg-transparent hover:text-white hover:border hover:border-white transition-all"
           >
             <svg
               width="16px"
               height="16px"
               fill="#fff"
-              className="mr-2"
+              className="mr-2 invert group-hover:invert-0"
               viewBox="0 0 548.244 548.244"
             >
               <path

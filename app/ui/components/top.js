@@ -63,7 +63,7 @@ export default function Top() {
     return(
         <div id="top" className="topWrapper flex flex-wrap justify-center gap-y-14 items-center w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl py-16" ref={container}>
             <div className="textWrapper flex-1">
-                <h4 className={`${poppins.className} font-normal uppercase text-black leading-none`}>
+                <h4 className={`${poppins.className} font-normal uppercase text-white leading-none`}>
                     <div className="toptext text-2xl lg:text-4xl mb-8">
                         <div className="word mr-2 inline-block">
                             <div className="char inline-block">
@@ -141,10 +141,10 @@ export default function Top() {
                     <div className="bottomtext normal-case text-2xl lg:text-4xl">based in Lahore, Pakistan.</div>
                 </h4>
                 <div className="actionBtnsWrapper mt-10 flex gap-3">
-                    <Link href="#projects" className="bg-black border-[#000000] border rounded-full capitalize text-[16px] hover:text-black hover:bg-transparent transition-all text-gray-50 font-bold px-5 py-3">
+                    <Link href="#projects" className="bg-white border-[#ffffff] border rounded-full capitalize text-[16px] hover:text-white hover:bg-transparent transition-all text-black font-bold px-5 py-3">
                         View my Work
                     </Link>
-                    <Link href="#contact" className="border-[#000000] border rounded-full capitalize text-[16px] hover:text-gray-50 hover:bg-black transition-all text-black font-bold px-5 py-3">
+                    <Link href="#contact" className="border-[#ffffff] border rounded-full capitalize text-[16px] hover:text-black hover:bg-white transition-all text-white font-bold px-5 py-3">
                         Contact me
                     </Link>
                 </div>

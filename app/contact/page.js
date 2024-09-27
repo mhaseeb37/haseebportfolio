@@ -240,7 +240,7 @@ export default function Page() {
                   type="number"
                   placeholder="Phone No."
                   name="phone"
-                  className="px-2 py-3 bg-white text-black w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 outline-none"
+                  className="px-2 py-3 bg-white text-white w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 outline-none"
                   value={formData.phone}
                   onChange={handleOnChange}
                 />
@@ -261,7 +261,7 @@ export default function Page() {
                   type="email"
                   placeholder="Email"
                   name="to"
-                  className="px-2 py-3 bg-white text-black w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 outline-none"
+                  className="px-2 py-3 bg-white text-white w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 outline-none"
                   value={formData.email}
                   onChange={handleOnChange}
                 />
@@ -299,7 +299,7 @@ export default function Page() {
                 <textarea
                   placeholder="Write Message"
                   name="message"
-                  className="px-2 pt-3 bg-white text-black w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 outline-none"
+                  className="px-2 pt-3 bg-white text-white w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-500 outline-none"
                   value={formData.message}
                   onChange={handleOnChange}
                 ></textarea>
