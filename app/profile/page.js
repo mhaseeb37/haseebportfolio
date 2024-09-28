@@ -32,8 +32,8 @@ export default function Page(){
           <div className="absolute inset-0 w-full h-full z-20">
             <CustomParticles />
           </div>
-          <div className="w-full z-40 pt-[100px]" ref={container}>
-              <div className="w-full px-3 md:pl-10 bg-black">
+          <div className="w-full relative z-40 pt-[100px]" ref={container}>
+              <div className="w-full px-3 md:pl-10">
                     <Top />
                     <About />
                     <Services />
