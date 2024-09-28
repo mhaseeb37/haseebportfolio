@@ -80,13 +80,13 @@ export default function Hero() {
             <div className="mt-12" id="actionBtns">
               <Link
                 href="/profile"
-                className="profilebtn bg-black border-black border border-inherit hover:text-white hover:bg-gray-100 transition-all text-gray-50 font-bold text-sm rounded px-5 py-3"
+                className="profilebtn bg-black border-black border border-inherit hover:text-black hover:bg-gray-100 transition-all text-gray-50 font-bold text-sm rounded px-5 py-3"
               >
                 Explore About Me
               </Link>
               <Link
                 href="/contact"
-                className="text-white text-sm font-bold sm:ml-6 max-sm:mt-4 max-sm:block whitespace-nowrap"
+                className="text-white text-sm font-bold sm:ml-6 max-sm:mt-4 max-sm:block whitespace-nowrap hover:underline"
               >
                 Contact Me
               </Link>
@@ -106,7 +106,7 @@ export default function Hero() {
       </div>
       <div ref={container} className="textBoxes flex gap-4 mt-10">
         <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
-          <svg width="100px" height="100px" viewBox="-3 0 48 48" version="1.1">
+          <svg className="hover:scale-150 hover:cursor-pointer transition-all" width="100px" height="100px" viewBox="-3 0 48 48" version="1.1">
             <g
               id="Color-"
               transform="translate(-203.000000, -660.000000)"
@@ -120,8 +120,8 @@ export default function Hero() {
           </svg>
         </div>
         <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
-          <svg
-            fill="#000000"
+          <svg className="hover:scale-150 hover:cursor-pointer transition-all"
+            fill="#ffffff"
             height="100px"
             width="100px"
             version="1.1"
@@ -150,7 +150,7 @@ export default function Hero() {
           </svg>
         </div>
         <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
-          <svg
+          <svg className="hover:scale-150 hover:cursor-pointer transition-all"
             width="100px"
             height="100px"
             viewBox="0 -191.5 512 512"
@@ -166,7 +166,7 @@ export default function Hero() {
           </svg>
         </div>
         <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
-          <svg width="100px" height="100px" viewBox="0 0 32 32" fill="none">
+          <svg className="hover:scale-150 hover:cursor-pointer transition-all" width="100px" height="100px" viewBox="0 0 32 32" fill="none">
             <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#E44D26" />
             <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529" />
             <path
@@ -176,7 +176,7 @@ export default function Hero() {
           </svg>
         </div>
         <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
-          <svg
+          <svg className="hover:scale-150 hover:cursor-pointer transition-all"
             fill="#000000"
             version="1.1"
             width="100px"
@@ -196,7 +196,7 @@ export default function Hero() {
           </svg>
         </div>
         <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
-          <svg width="100px" height="100px" viewBox="0 0 256 256" version="1.1">
+          <svg className="hover:scale-150 hover:cursor-pointer transition-all" width="100px" height="100px" viewBox="0 0 256 256" version="1.1">
             <g>
               <path
                 d="M0,0 L256,0 L256,256 L0,256 L0,0 Z"

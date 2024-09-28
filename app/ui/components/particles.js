@@ -42,7 +42,7 @@ export default function CustomParticles() {
               },
               move: {
                 enable: true,
-                speed: 3,
+                speed: 2,
               },
             },
             interactivity: {

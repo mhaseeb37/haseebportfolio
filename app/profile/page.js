@@ -28,39 +28,28 @@ export default function Page(){
     
   }, [{ scope: container }]);
     return(
-        <div className="relative h-screen">
-            {/* <div className={`${styles.overlay} fixed z-20 w-auto min-w-full min-h-full max-w-none`}></div>
-        <video
-          autoPlay
-          loop
-          muted
-          className="fixed z-10 w-auto min-w-full min-h-full max-w-none"
-        >
-          <source
-            src="/assets/video-bg.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video> */}
-            <div className="w-full h-screen z-40 relative pt-[100px]" ref={container}>
-                <div className="w-full px-3 md:pl-10 bg-black">
-                  <CustomParticles />
-                      <Top />
-                      <About />
-                      <Services />
-                      <Skills />
-                      <Facts />
-                      <Experience />
-                      <Projects/>
-                      <HowIWork/>
-                      <Blogs />
-                      <Testimonials />
-                      <ContactMe />
-                </div>
-                <div className="relative w-full hidden md:block flex-none md:w-64 text-white">
-                    <Sidebar />
-                </div>
-            </div>
+        <div className="relative">
+          <div className="absolute inset-0 w-full h-full z-20">
+            <CustomParticles />
+          </div>
+          <div className="w-full z-40 pt-[100px]" ref={container}>
+              <div className="w-full px-3 md:pl-10 bg-black">
+                    <Top />
+                    <About />
+                    <Services />
+                    <Skills />
+                    <Facts />
+                    <Experience />
+                    <Projects/>
+                    <HowIWork/>
+                    <Blogs />
+                    <Testimonials />
+                    <ContactMe />
+              </div>
+              <div className="relative w-full hidden md:block flex-none md:w-64 text-white">
+                  <Sidebar />
+              </div>
+          </div>
         </div>
     )
 }
