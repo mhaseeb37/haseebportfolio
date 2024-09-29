@@ -121,7 +121,7 @@ export default function Hero() {
         </div>
         <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
           <svg className="hover:scale-150 hover:cursor-pointer transition-all"
-            fill="#ffffff"
+            fill="#000000"
             height="100px"
             width="100px"
             version="1.1"
