@@ -2,8 +2,8 @@ import { Calendar, Clock } from "phosphor-react"
 import Image from "next/image"
 export default function PostCard({ image, title, date, readTime, description, tags }) {
     return(
-        <div className="flex items-center p-5 w-full bg-[#ffffff33] hover:bg-[#00000008] border border-[#0000001a] rounded-lg space-x-5 duration-300">
-            <div className="group overflow-hidden w-1/3">
+        <div className="flex flex-wrap md:flex-nowrap items-center p-5 w-full bg-[#ffffff33] hover:bg-[#00000008] border border-[#0000001a] rounded-lg space-x-0 md:space-x-5 duration-300">
+            <div className="group overflow-hidden mb-3 w-1/2 md:w-1/3">
                 <Image src={image} alt={title} width={100} height={100} layout="responsive" className="w-full object-cover rounded-lg transform transition-transform duration-300 group-hover:scale-110" unoptimized />
             </div>
       <div className="flex flex-col">

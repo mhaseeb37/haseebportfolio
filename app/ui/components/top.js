@@ -141,10 +141,10 @@ export default function Top() {
                     <div className="bottomtext normal-case text-2xl lg:text-4xl">based in Lahore, Pakistan.</div>
                 </h4>
                 <div className="actionBtnsWrapper mt-10 flex gap-3">
-                    <Link href="#projects" className="bg-black border-[#000000] border rounded-full capitalize text-[16px] hover:text-black hover:bg-transparent transition-all text-gray-50 font-bold px-5 py-3">
+                    <Link href="#projects" className="bg-black border-[#000000] border rounded-full capitalize text-[16px] hover:text-black hover:bg-transparent transition-all text-black font-bold px-5 py-3">
                         View my Work
                     </Link>
-                    <Link href="#contact" className="border-[#000000] border rounded-full capitalize text-[16px] hover:text-gray-50 hover:bg-black transition-all text-black font-bold px-5 py-3">
+                    <Link href="#contact" className="border-[#000000] border rounded-full capitalize text-[16px] hover:text-black hover:bg-black transition-all text-black font-bold px-5 py-3">
                         Contact me
                     </Link>
                 </div>

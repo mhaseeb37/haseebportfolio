@@ -15,7 +15,15 @@ export default function TestimonialSlider(props){
         centerMode: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        variableWidth: true
+        variableWidth: true,
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                  variableWidth: false,
+                }
+              }
+        ]  
       };
       return (
         <div className="slider-container">

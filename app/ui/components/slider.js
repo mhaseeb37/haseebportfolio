@@ -15,12 +15,21 @@ export default function Sliderslick(props){
         autoplay: true,
         autoplaySpeed: 3000,
         pauseOnHover: true,
-        arrows: false    
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+        ]    
       };
     return(
         <Slider {...settings}>
             {slideData.map((slide, index) => (
-            <div key={index} className="p-10">
+            <div key={index} className="p-3 pt-10 md:p-10">
                 <Slidebox slide={slide} />
             </div>
             ))}
