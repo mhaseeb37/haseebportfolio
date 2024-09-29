@@ -1,5 +1,6 @@
 
 import Hero from "./ui/components/hero";
+import Image from "next/image";
 import styles from "./ui/custom.module.css"
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
           autoPlay
           loop
           muted
-          className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
+          className="fixed hidden md:block z-10 w-auto min-w-full min-h-full max-w-none"
         >
           <source
             src="/assets/video-bg.mp4"
@@ -18,6 +19,7 @@ export default function Home() {
           />
           Your browser does not support the video tag.
         </video>
+        <Image src="/assets/mobile-bg.jpg" width={100} height={100} alt="background" className="block md:hidden object-cover object-left fixed z-10 min-w-full min-h-full" />
         <Hero />
     </div>
   );

@@ -17,6 +17,7 @@ import Blogs from "../ui/components/blogs";
 import Skills from "../ui/components/skills";
 import Projects from "../ui/components/projects";
 import HowIWork from "../ui/components/howwork";
+import Image from "next/image";
 
 // Register the TextPlugin
 gsap.registerPlugin(TextPlugin);
@@ -33,7 +34,7 @@ export default function Page(){
           autoPlay
           loop
           muted
-          className="fixed z-10 w-auto min-w-full min-h-full max-w-none"
+          className="fixed hidden md:block z-10 w-auto min-w-full min-h-full max-w-none"
         >
           <source
             src="/assets/video-bg.mp4"
@@ -41,6 +42,7 @@ export default function Page(){
           />
           Your browser does not support the video tag.
         </video>
+        <Image src="/assets/mobile-bg.jpg" width={100} height={100} alt="background" className="block md:hidden object-cover object-left fixed z-10 min-w-full min-h-full" />
             <div className="w-full h-screen z-40 relative pt-[100px]" ref={container}>
                 <div className="w-full px-3 md:pl-10">
                     <Top />
