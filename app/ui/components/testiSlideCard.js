@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function TestimonialCard({ data }) {
     return (
-        <div className="flex items-start gap-x-4 relative px-10 py-8 border border-white mr-2 shadow-lg max-w-4xl min-h-52 mx-auto">
+        <div className="flex flex-col md:flex-row items-start gap-x-4 relative px-10 py-8 border border-white md:mr-2 shadow-lg md:max-w-4xl md:min-h-52 mx-auto">
             {/* Avatar Section */}
             <div className="">
                 <div className="rounded-full w-24 h-24 overflow-hidden">

@@ -61,7 +61,7 @@ export default function Hero() {
       ref={container}
     >
       <div className={`${styles.absoluteOverlay}`}></div>
-      <div className="max-w-5xl max-md:max-w-md mx-auto">
+      <div className="p-3 max-w-5xl max-md:max-w-md mx-auto">
         <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center gap-12">
           <div>
             <h2 className={`${lusitana.className} text-white lg:text-5xl md:text-4xl text-3xl font-bold mb-4 lg:!leading-[55px] title`}>
@@ -69,9 +69,9 @@ export default function Hero() {
             </h2>
             <div className={`${playfairDisplay.className} text-white mt-6 leading-relaxed title2`}>
               <h3 className="text-3xl">I am</h3>
-              <h1 className={`${whisper.className} lg:text-6xl md:text-4xl text-3xl`}>Muhammad Haseeb</h1>
+              <h1 className={`${whisper.className} lg:text-6xl md:text-4xl text-5xl`}>Muhammad Haseeb</h1>
             </div>
-            <div className={`${whisper.className} text-white text-4xl animatedWrapper mt-4`}>
+            <div className={`${whisper.className} text-white text-5xl animatedWrapper mt-4`}>
               <span className="mr-5">A</span>
               
               <span id="animated-text"></span>
@@ -80,13 +80,13 @@ export default function Hero() {
             <div className="mt-12" id="actionBtns">
               <Link
                 href="/profile"
-                className="profilebtn bg-black border-black border border-inherit hover:text-black hover:bg-gray-100 transition-all text-gray-50 font-bold text-sm rounded px-5 py-3"
+                className="profilebtn mr-3 bg-black border-black border border-inherit hover:text-black hover:bg-gray-100 transition-all text-gray-50 font-bold text-sm rounded px-5 py-3"
               >
                 Explore About Me
               </Link>
               <Link
                 href="/contact"
-                className="text-white text-sm font-bold sm:ml-6 max-sm:mt-4 max-sm:block whitespace-nowrap hover:underline"
+                className="text-white text-sm font-bold sm:ml-6 max-sm:mt-4 whitespace-nowrap hover:underline"
               >
                 Contact Me
               </Link>
@@ -95,7 +95,7 @@ export default function Hero() {
           <div id="sheikhsImg" className="static inset-y-0 right-0 w-full md:absolute sm:w-1/2">
             <Image
               src="/assets/portfoliopic.jpg"
-              className="shrink-0 w-full h-full mx-auto object-contain sm:rounded-tl-full sm:rounded-bl-full rounded-none"
+              className="shrink-0 w-1/2 h-full mx-auto object-contain sm:rounded-tl-full sm:rounded-bl-full rounded-full"
               width={100}
               height={100}
               unoptimized
@@ -104,7 +104,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div ref={container} className="textBoxes flex gap-4 mt-10">
+      <div ref={container} className="textBoxes flex gap-4 mt-4 md:mt-10">
         <div className={`${styles.svgLogos} flex justify-center items-center round gradient-blue`}>
           <svg className="hover:scale-150 hover:cursor-pointer transition-all" width="100px" height="100px" viewBox="-3 0 48 48" version="1.1">
             <g
