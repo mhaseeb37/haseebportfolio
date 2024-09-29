@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
@@ -23,6 +23,19 @@ import Image from "next/image";
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 export default function Page(){
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    // Check if it's a mobile device (width < 768px)
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      // Pause video on mobile devices
+      video.pause();
+    }
+  }, []);
   const container = useRef();
   useGSAP(() => {
     
@@ -30,7 +43,7 @@ export default function Page(){
     return(
         <div className="relative bg-white h-screen">
             <div className={`${styles.overlay} fixed z-20 w-auto min-w-full min-h-full max-w-none`}></div>
-        <video
+        <video ref={videoRef}
           autoPlay
           loop
           muted
