@@ -26,7 +26,7 @@ export default function Titleoverlay(props){
     });
     return(
         <div className="aboutAboveWrapper relative" ref={container}>
-            <span className={`${lusitana.className} ${gsapClass} titleOverlay absolute font-bold top-0 left-0 uppercase text-[50px] md:text-9xl opacity-20`}>
+            <span className={`${lusitana.className} ${gsapClass} titleOverlay absolute font-bold top-0 left-0 uppercase text-[50px] md:text-9xl opacity-5`}>
                 {props.overlayText}
             </span>
             <div className="mainTitleWrapper pl-8 md:py-8 md:pl-14 pt-11 border-l-2 border-[#000000]">
