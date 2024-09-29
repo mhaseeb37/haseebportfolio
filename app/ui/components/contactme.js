@@ -9,7 +9,7 @@ export default function ContactMe() {
     return(
         <div id="contact" className={`${poppins.className} expWrapper pt-10 md:pt-32 w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl text-black`}>
             <Titleoverlay overlayText="Contact" subTitle="Let's get in touch" mainTitle="Contact Me"/>
-            <div className="flex justify-start items-center space-x-8 p-4">
+            <div className="flex flex-col md:flex-row justify-start items-start md:items-center md:space-x-8 p-4">
                 <IconBox iconname="phone" url={`tel:${socialLinks.phone}`} data={socialLinks.phone}/>
                 <IconBox iconname="envelope" url={`mailto:${socialLinks.email}`} data={socialLinks.email}/>
                 <IconBox iconname="location" url={`${socialLinks.location}`} data="Lahore, Pakistan"/>
