@@ -3,7 +3,7 @@ import Titleoverlay from "./titleoverlay";
 
 export default function Facts() {
     return(
-        <div id="myfacts" className={`${poppins.className} factsWrapper pt-32 w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl text-white`}>
+        <div id="myfacts" className={`${poppins.className} factsWrapper pt-10 md:pt-32 w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl text-white`}>
             <Titleoverlay overlayText="My Facts" subTitle="Some interesting facts about me" mainTitle="Fun Facts"  />
             <div className="grid grid-cols-12 mb-5 mt-5">
                 <div className="col-span-6 md:col-span-4 col-start-1">
