@@ -13,7 +13,7 @@ import { lusitana, playfairDisplay, whisper } from '@/app/ui/fonts';
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
-  const words = ["🧑🏼‍💻 Developer", "🌎 Traveler", "🎥 Vlogger"];
+  const words = personalInfo.hobbies;
   const container = useRef();
   useGSAP(() => {
     gsap.set(".mainWrapper", { scale: 1 });
@@ -95,7 +95,7 @@ export default function Hero() {
           <div id="sheikhsImg" className="static inset-y-0 right-0 w-full md:absolute sm:w-1/2">
             <Image
               src="/assets/portfoliopic.jpg"
-              className="shrink-0 w-1/2 h-full mx-auto object-contain sm:rounded-tl-full sm:rounded-bl-full rounded-full"
+              className="shrink-0 w-1/2 md:w-full h-full mx-auto object-contain md:rounded-tl-full md:rounded-bl-full md:rounded-tr-none md:rounded-br-none rounded-full"
               width={100}
               height={100}
               unoptimized
