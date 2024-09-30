@@ -203,3 +203,25 @@ const posts = [
   ];
 
   export {developerSkills};
+
+  const projects =[
+    {
+        name:"Coloritto",
+        desc:"Shopify Store",
+        tags:["Frontend","Backend","Customization"],
+        url:"https://coloritto.co"
+    },
+    {
+        name:"Hertrove",
+        desc:"Shopify Store",
+        tags:["Frontend","Backend","Customization"],
+        url:"https://hertrove.com"
+    },
+    {
+        name:"Mero Living",
+        desc:"Shopify Store",
+        tags:["Frontend","Backend","Customization"],
+        url:"https://meroliving.com"
+    }
+  ]
+  export {projects};
