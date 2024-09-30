@@ -145,3 +145,61 @@ const posts = [
   ];
 
   export {posts};
+
+  const personalInfo = {
+    name: "Muhammad Haseeb",
+    designation: "Senior Software Engineer",
+    hobbies:[
+        "🧑🏼‍💻 Developer", "🌎 Traveler", "🎥 Vlogger"
+    ],
+    mobile:"+923224225997",
+    emails:["mhaseeb37@gmail.com","developer.haseeb37@gmail.com","info@muhammadhaseeb.site"],
+    location:"Lahore, Pakistan"
+  }
+
+  export {personalInfo};
+
+  const developerSkills = [
+    {
+        skillName:"HTML",
+        SkillScore: 95
+    },
+    {
+        skillName:"CSS",
+        SkillScore: 95
+    },
+    {
+        skillName:"JAVASCRIPT",
+        SkillScore: 85
+    },
+    {
+        skillName:"SHOPIFY",
+        SkillScore: 95
+    },
+    {
+        skillName:"WORDPRESS",
+        SkillScore: 80
+    },
+    {
+        skillName:"WEBFLOW",
+        SkillScore: 90
+    },
+    {
+        skillName:"CMS",
+        SkillScore: 87
+    },
+    {
+        skillName:"LIQUID",
+        SkillScore: 85
+    },
+    {
+        skillName:"SHOPIFY APP DEVELOPMENT",
+        SkillScore: 75
+    },
+    {
+        skillName:"PAGE BUILDERS",
+        SkillScore: 97
+    }
+  ];
+
+  export {developerSkills};
