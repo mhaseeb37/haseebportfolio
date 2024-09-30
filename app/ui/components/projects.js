@@ -9,7 +9,6 @@ export default function Projects() {
             <Titleoverlay overlayText="Projects" subTitle="Some of my most recent projects" mainTitle="My Featured Projected"/>    
             <div className="flex flex-wrap gap-y-5 md:gap-10 mt-8">
                 {projects.map((project,index)=>(
-                    console.log(project),
                     <ProjectItem key={index} project={project} />
                 ))}
             </div>
