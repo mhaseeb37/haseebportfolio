@@ -158,3 +158,48 @@ const posts = [
   }
 
   export {personalInfo};
+
+  const developerSkills = [
+    {
+        skillName:"HTML",
+        SkillScore: 95
+    },
+    {
+        skillName:"CSS",
+        SkillScore: 95
+    },
+    {
+        skillName:"JAVASCRIPT",
+        SkillScore: 85
+    },
+    {
+        skillName:"SHOPIFY",
+        SkillScore: 95
+    },
+    {
+        skillName:"WORDPRESS",
+        SkillScore: 80
+    },
+    {
+        skillName:"WEBFLOW",
+        SkillScore: 90
+    },
+    {
+        skillName:"CMS",
+        SkillScore: 87
+    },
+    {
+        skillName:"LIQUID",
+        SkillScore: 85
+    },
+    {
+        skillName:"SHOPIFY APP DEVELOPMENT",
+        SkillScore: 75
+    },
+    {
+        skillName:"PAGE BUILDERS",
+        SkillScore: 97
+    }
+  ];
+
+  export {developerSkills};
