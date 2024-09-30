@@ -8,6 +8,7 @@ import Link from "next/link";
 import styles from "../custom.module.css";
 import Image from "next/image";
 import { lusitana, playfairDisplay, whisper } from '@/app/ui/fonts';
+import { personalInfo } from "@/app/common/constant";
 
 // Register the TextPlugin
 gsap.registerPlugin(TextPlugin);
@@ -69,7 +70,7 @@ export default function Hero() {
             </h2>
             <div className={`${playfairDisplay.className} text-black mt-6 leading-relaxed title2`}>
               <h3 className="text-3xl">I am</h3>
-              <h1 className={`${whisper.className} lg:text-6xl md:text-4xl text-5xl`}>Muhammad Haseeb</h1>
+              <h1 className={`${whisper.className} lg:text-6xl md:text-4xl text-5xl`}>{personalInfo.name}</h1>
             </div>
             <div className={`${whisper.className} text-black text-5xl animatedWrapper mt-4`}>
               <span className="mr-5">A</span>

@@ -145,3 +145,16 @@ const posts = [
   ];
 
   export {posts};
+
+  const personalInfo = {
+    name: "Muhammad Haseeb",
+    designation: "Senior Software Engineer",
+    hobbies:[
+        "🧑🏼‍💻 Developer", "🌎 Traveler", "🎥 Vlogger"
+    ],
+    mobile:"+923224225997",
+    emails:["mhaseeb37@gmail.com","developer.haseeb37@gmail.com","info@muhammadhaseeb.site"],
+    location:"Lahore, Pakistan"
+  }
+
+  export {personalInfo};

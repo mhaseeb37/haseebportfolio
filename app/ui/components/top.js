@@ -7,10 +7,11 @@ import Image from "next/image";
 import styles from "@/app/ui/custom.module.css"
 import { poppins } from "../fonts";
 import Link from "next/link";
+import { personalInfo } from "@/app/common/constant";
 
 gsap.registerPlugin(TextPlugin);
 export default function Top() {
-    const words = ["🧑🏼‍💻 Developer", "🌎 Traveler", "🎥 Vlogger"];
+    const words = personalInfo.hobbies;
     const container = useRef();
     useGSAP(()=>{
         const tl = gsap.timeline();
@@ -87,52 +88,15 @@ export default function Top() {
                                 M
                             </div>
                         </div>
-                        <div className="word mr-2 inline-block">
-                            <div className="char inline-block">
-                                M
+                        {personalInfo.name.split(' ').map((word, wordIndex) => (
+                            <div className="word mr-2 inline-block" key={wordIndex}>
+                            {word.split('').map((char, charIndex) => (
+                                <div className="char inline-block" key={charIndex}>
+                                {char}
+                                </div>
+                            ))}
                             </div>
-                            <div className="char inline-block">
-                                U
-                            </div>
-                            <div className="char inline-block">
-                                H
-                            </div>
-                            <div className="char inline-block">
-                                A
-                            </div>
-                            <div className="char inline-block">
-                                M
-                            </div>
-                            <div className="char inline-block">
-                                M
-                            </div>
-                            <div className="char inline-block">
-                                A
-                            </div>
-                            <div className="char inline-block">
-                                D
-                            </div>
-                        </div>
-                        <div className="word mr-2 inline-block">
-                            <div className="char inline-block">
-                                H
-                            </div>
-                            <div className="char inline-block">
-                                a
-                            </div>
-                            <div className="char inline-block">
-                                s
-                            </div>
-                            <div className="char inline-block">
-                                e
-                            </div>
-                            <div className="char inline-block">
-                                e
-                            </div>
-                            <div className="char inline-block">
-                                b
-                            </div>
-                        </div>
+                        ))}
                     </div>
                     <div className="animatedtext text-3xl md:text-6xl font-bold mb-8">
                         <span id="animated-text"></span>
