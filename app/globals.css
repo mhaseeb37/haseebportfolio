@@ -35,6 +35,7 @@ body {
 
 .custom-progress-bar::-webkit-progress-value {
   background-color: #000000; 
+  transition: width 0.3s ease-in-out;
 }
 
 .custom-progress-bar::-moz-progress-bar {
