@@ -45,11 +45,11 @@ export default function ProgressBar({ skillIndex, skillName, skillDesc }) {
     <section className="p-8">
       <div className="flex flex-wrap justify-between items-center w-full md:max-w-4xl mx-auto mr-0">
         {skillName ? (
-          <div className="textSideWrapper w-full md:w-1/2 relative p-4 before:absolute before:w-[2px] before:h-full before:content-[''] before:bg-black before:-left-8 before:top-0 before:bottom-0">
+          <div className="textSideWrapper w-full md:w-1/2 relative p-4 before:absolute before:w-[2px] before:h-full before:content-[''] before:bg-white before:-left-8 before:top-0 before:bottom-0">
             <h2 className="text-2xl md:text-5xl font-bold md:mb-2">{skillName}</h2>
             <p className="text-base md:text-xl">{skillDesc}</p>
             {skillIndex ? (
-              <span className="absolute text-4xl md:text-5xl -left-5 -bottom-20 -rotate-90 text-[#00000080] font-semibold">
+              <span className="absolute text-4xl md:text-5xl -left-5 -bottom-20 -rotate-90 text-[#ffffff80] font-semibold">
                 0{skillIndex}.-
               </span>
             ) : (
