@@ -8,6 +8,7 @@ import Link from "next/link";
 import styles from "../custom.module.css";
 import Image from "next/image";
 import { lusitana, playfairDisplay, whisper } from '@/app/ui/fonts';
+import { personalInfo } from "@/app/common/constant";
 
 // Register the TextPlugin
 gsap.registerPlugin(TextPlugin);

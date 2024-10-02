@@ -6,11 +6,11 @@ const SkillsCard = ({skillIndex, skillName, skillDesc, skill1, title1, skill2, t
     <section className="p-8">
       <div className="flex flex-wrap justify-between items-center w-full md:max-w-3xl lg:max-w-4xl xl:max-w-6xl mx-auto">
         {skillName? 
-          <div className="textSideWrapper w-full md:w-1/3 relative p-4 before:absolute before:w-[2px] before:h-full before:content-[''] before:bg-black before:-left-8 before:top-0 before:bottom-0">
+          <div className="textSideWrapper w-full md:w-1/3 relative p-4 before:absolute before:w-[2px] before:h-full before:content-[''] before:bg-white before:-left-8 before:top-0 before:bottom-0">
             <h2 className="text-2xl md:text-5xl font-bold md:mb-2">{skillName}</h2>
             <p className="text-base md:text-xl">{skillDesc}</p>
             {skillIndex?
-            <span className="absolute text-4xl md:text-5xl -left-5 -bottom-20 -rotate-90 text-[#00000080] font-semibold">
+            <span className="absolute text-4xl md:text-5xl -left-5 -bottom-20 -rotate-90 text-[#ffffff80] font-semibold">
               0{skillIndex}.-
             </span> : ""}
           </div>
@@ -20,7 +20,7 @@ const SkillsCard = ({skillIndex, skillName, skillDesc, skill1, title1, skill2, t
         {skill1 && title1?
           <div className="flex flex-col w-full mb-4 md:mb-0 md:w-1/3 items-center">
             <div className="relative w-full h-full mb-4">
-              <span className="mx-auto text-2xl md:text-5xl p-8 w-52 h-52 font-bold border-[6px] border-black rounded-full flex items-center justify-center">
+              <span className="mx-auto text-2xl md:text-5xl p-8 w-52 h-52 font-bold border-[6px] border-white rounded-full flex items-center justify-center">
                 <CountUp
                   start={0}
                   end={skill1}
@@ -31,7 +31,7 @@ const SkillsCard = ({skillIndex, skillName, skillDesc, skill1, title1, skill2, t
                 />
               </span>
             </div>
-            <span className="mt-2 font-medium text-lg border border-black py-2 px-4 rounded-full hover:bg-black hover:text-white hover:cursor-pointer">
+            <span className="mt-2 font-medium text-lg border border-white py-2 px-4 rounded-full hover:bg-white hover:text-black hover:cursor-pointer">
               {title1}
             </span>
           </div>
@@ -39,7 +39,7 @@ const SkillsCard = ({skillIndex, skillName, skillDesc, skill1, title1, skill2, t
           {skill2 && title2?
           <div className="flex flex-col w-full mb-4 md:mb-0 md:w-1/3 items-center">
             <div className="relative w-full h-full mb-4">
-              <span className="mx-auto text-2xl md:text-5xl p-8 w-52 h-52 font-bold border-[6px] border-black rounded-full flex items-center justify-center">
+              <span className="mx-auto text-2xl md:text-5xl p-8 w-52 h-52 font-bold border-[6px] border-white rounded-full flex items-center justify-center">
                 <CountUp
                   start={0}
                   end={skill2}
@@ -50,7 +50,7 @@ const SkillsCard = ({skillIndex, skillName, skillDesc, skill1, title1, skill2, t
                 />
               </span>
             </div>
-            <span className="mt-2 font-medium text-lg border border-black py-2 px-4 rounded-full hover:bg-black hover:text-white hover:cursor-pointer">
+            <span className="mt-2 font-medium text-lg border border-white py-2 px-4 rounded-full hover:bg-white hover:text-black hover:cursor-pointer">
               {title2}
             </span>
           </div>
@@ -58,7 +58,7 @@ const SkillsCard = ({skillIndex, skillName, skillDesc, skill1, title1, skill2, t
           {skill3 && title3?
           <div className="flex flex-col w-full mb-4 md:mb-0 md:w-1/3 items-center">
             <div className="relative w-full h-full mb-4">
-              <span className="mx-auto text-2xl md:text-5xl p-8 w-52 h-52 font-bold border-[6px] border-black rounded-full flex items-center justify-center">
+              <span className="mx-auto text-2xl md:text-5xl p-8 w-52 h-52 font-bold border-[6px] border-white rounded-full flex items-center justify-center">
                 <CountUp
                   start={0}
                   end={skill3}
@@ -69,7 +69,7 @@ const SkillsCard = ({skillIndex, skillName, skillDesc, skill1, title1, skill2, t
                 />
               </span>
             </div>
-            <span className="mt-2 font-medium text-lg border border-black py-2 px-4 rounded-full hover:bg-black hover:text-white hover:cursor-pointer">
+            <span className="mt-2 font-medium text-lg border border-white py-2 px-4 rounded-full hover:bg-white hover:text-black hover:cursor-pointer">
               {title3}
             </span>
           </div>: ""}
