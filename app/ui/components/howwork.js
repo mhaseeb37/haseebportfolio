@@ -29,7 +29,7 @@ export default function HowIWork() {
             <Titleoverlay overlayText="How I Work" subTitle="How I Work" mainTitle="My Working Process"/>
             <div className="flex mt-4 md:mt-10">
                 {workProcess.map((work,index)=> (
-                    <div className="workProcess flex flex-col justify-center align-middle w-52 h-52 p-10 text-black font-semibold text-center relative before:absolute before:block before:content-[''] before:-left-[4px] before:w-2 before:h-2 before:rounded-full before:bg-black after:absolute after:block after:content-[''] after:-right-[4px] after:w-2 after:h-2 after:rounded-full after:bg-black">
+                    <div key={index} className="workProcess flex flex-col justify-center align-middle w-52 h-52 p-10 text-black font-semibold text-center relative before:absolute before:block before:content-[''] before:-left-[4px] before:w-2 before:h-2 before:rounded-full before:bg-black after:absolute after:block after:content-[''] after:-right-[4px] after:w-2 after:h-2 after:rounded-full after:bg-black">
                         <p>0{index+1}.</p>
                         <p className="text-lg uppercase">{work}</p>
                         <span className="borderBox before:absolute before:w-full before:h-1/2 before:content-[''] before:border-t-[2px] before:border-dashed before:border-black before:top-0 before:left-0 before:rounded-t-[208px] after:absolute after:w-full after:h-1/2 after:content-[''] after:border-b-[2px] after:border-black after:bottom-0 after:left-0 after:rounded-b-[208px]"></span>
