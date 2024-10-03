@@ -225,3 +225,8 @@ const posts = [
     }
   ]
   export {projects};
+
+  const workProcess = [
+    "Plan","Develop","Customize","Test","Launch"
+  ]
+  export {workProcess};
