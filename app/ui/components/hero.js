@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
@@ -13,10 +13,36 @@ import { personalInfo } from "@/app/common/constant";
 // Register the TextPlugin
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
+
+
 export default function Hero() {
+  const [data, setData] = useState();
+  const [cwords, setCWords] = useState([]); // State to hold data from API
+  const [isLoading, setIsLoading] = useState(true);
   const words = personalInfo.hobbies;
   const container = useRef();
+  // Fetching data from your Next.js API
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/contentful'); // Adjust API route if necessary
+        const data = await response.json();
+        setData(data);
+        setCWords(data[0].fields.hobbies); // Assuming `hobbies` is the key in the response
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+  console.log("Data",data);
+  console.log("CWords",cwords);
+  
   useGSAP(() => {
+    if (!isLoading) {
     gsap.set(".mainWrapper", { scale: 1 });
 
     const tl = gsap.timeline();
@@ -32,7 +58,6 @@ export default function Hero() {
         ease: "back",
       })
       .from("#actionBtns", { xPercent: -100 })
-      .from("#textBoxes", { opacity: 0, scale: 0 })
       .from(".round", {
         scale: 0,
         duration: 1, // Infinite loop
@@ -50,12 +75,15 @@ export default function Hero() {
         ease:"power2.inOut"
       });
       const tlmaster = gsap.timeline({repeat:-1});
-      words.forEach((word)=>{
+      cwords.forEach((word)=>{
         let tlText = gsap.timeline({repeat:1,yoyo:true});
         tlText.to("#animated-text", {duration:1.5, text:word});
         tlmaster.add(tlText);
       });
-  }, [{ scope: container }]);
+    }
+  }, [isLoading]);
+  if(!data) return <div>Loading...</div>
+  else
   return (
     <div
       className="mainWrapper fixed z-30 font-sans my-10 px-6 py-12 overflow-hidden shadow-xl rounded-md"
@@ -66,11 +94,11 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 sm:grid-cols-1 items-center gap-12">
           <div>
             <h2 className={`${lusitana.className} text-black lg:text-5xl md:text-4xl text-3xl font-bold mb-4 lg:!leading-[55px] title`}>
-              Hello!
+              {data[0].fields.greeting}
             </h2>
             <div className={`${playfairDisplay.className} text-black mt-6 leading-relaxed title2`}>
               <h3 className="text-3xl">I am</h3>
-              <h1 className={`${whisper.className} lg:text-6xl md:text-4xl text-5xl`}>{personalInfo.name}</h1>
+              <h1 className={`${whisper.className} lg:text-6xl md:text-4xl text-5xl`}>{data[0].fields.name}</h1>
             </div>
             <div className={`${whisper.className} text-black text-5xl animatedWrapper mt-4`}>
               <span className="mr-5">A</span>
@@ -95,7 +123,7 @@ export default function Hero() {
           </div>
           <div id="sheikhsImg" className="static inset-y-0 right-0 w-full md:absolute sm:w-1/2">
             <Image
-              src="/assets/portfoliopic.jpg"
+              src={data[0].fields.profilePicture.fields.file.url}
               className="shrink-0 w-1/2 md:w-full h-full mx-auto object-contain md:rounded-tl-full md:rounded-bl-full md:rounded-tr-none md:rounded-br-none rounded-full"
               width={100}
               height={100}
