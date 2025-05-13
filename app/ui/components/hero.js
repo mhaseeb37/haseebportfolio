@@ -8,27 +8,27 @@ import Link from "next/link";
 import styles from "../custom.module.css";
 import Image from "next/image";
 import { lusitana, playfairDisplay, whisper } from '@/app/ui/fonts';
-import { personalInfo } from "@/app/common/constant";
+//import { personalInfo } from "@/app/common/constant";
 
-// Register the TextPlugin
+
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 
 export default function Hero() {
   const [data, setData] = useState();
-  const [cwords, setCWords] = useState([]); // State to hold data from API
+  const [cwords, setCWords] = useState([]); 
   const [isLoading, setIsLoading] = useState(true);
-  const words = personalInfo.hobbies;
+  //const words = personalInfo.hobbies;
   const container = useRef();
-  // Fetching data from your Next.js API
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/contentful'); // Adjust API route if necessary
+        const response = await fetch('/api/contentful'); 
         const data = await response.json();
         setData(data);
-        setCWords(data[0].fields.hobbies); // Assuming `hobbies` is the key in the response
+        setCWords(data[0].fields.hobbies); 
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);

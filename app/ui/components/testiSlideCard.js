@@ -18,7 +18,7 @@ export default function TestimonialCard({ data }) {
             {/* Content Section */}
             <div className="">
                 <h2 className="text-3xl font-bold mb-4">{data.name}</h2>
-                <p className="text-sm font-bold">{data.title} -- <a href={data.website} className="font-normal hover:underline">{data.website.replace(/https?:\/\/|\/$/g, '')}</a></p>
+                <p className="text-sm font-bold">{data.title} -- <a href={data.website} target='_blank' className="font-normal hover:underline">{data.website.replace(/https?:\/\/|\/$/g, '')}</a></p>
 
                 <p className="mt-4 text-base leading-relaxed">
                 &quot;{data.review}&quot;
