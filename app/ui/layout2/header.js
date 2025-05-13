@@ -13,7 +13,7 @@ export default function Header(){
                     <div className="headerWrapper">
                         <div className="logoWrapper">
                             <Link href="/">
-                                <Image alt="Muhammad Haseeb" src="/assets/MH_Logo.png" />
+                                <Image className="invert" alt="Muhammad Haseeb" src="/assets/MH_Logo.png" />
                             </Link>
                         </div>
                         <div className="hamburgerWrapper">
