@@ -1,5 +1,5 @@
 import Header from "../ui/layout2/header";
-import "../global.css"
+import "../globals.css"
 
 export default function Layout({children}){
     return(
