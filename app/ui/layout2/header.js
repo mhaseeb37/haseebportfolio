@@ -10,7 +10,7 @@ export default function Header(){
         <header className="mainHeader">
             <nav className="headerNav">
                 <div className="mainContainer">
-                    <div className="headerWrapper">
+                    <div className="headerWrapper flex content-between">
                         <div className="logoWrapper">
                             <Link href="/">
                                 <Image className="invert" alt="Muhammad Haseeb" src="/assets/MH_Logo.png" />
