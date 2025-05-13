@@ -3,7 +3,7 @@ import "../globals.css"
 
 export default function Layout({children}){
     return(
-        <main className="main">
+        <main className="main container m-auto">
             <Header />
             {children}
         </main>
