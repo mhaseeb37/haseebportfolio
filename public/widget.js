@@ -1,3 +1,4 @@
+console.log("Widget script loaded");
 (function () {
     function getScriptConfig() {
       // Find the current script tag
