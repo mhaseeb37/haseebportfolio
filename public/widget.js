@@ -43,7 +43,29 @@
       `;
       document.head.appendChild(style);
     }
-  
+    function createReopenButton(widget) {
+        const reopenBtn = document.createElement("button");
+        reopenBtn.textContent = "Open Widget";
+        reopenBtn.style.position = "fixed";
+        reopenBtn.style.bottom = "20px";
+        reopenBtn.style.right = "20px";
+        reopenBtn.style.padding = "10px 16px";
+        reopenBtn.style.zIndex = "9999";
+        reopenBtn.style.backgroundColor = "#333";
+        reopenBtn.style.color = "#fff";
+        reopenBtn.style.border = "none";
+        reopenBtn.style.borderRadius = "6px";
+        reopenBtn.style.cursor = "pointer";
+        reopenBtn.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
+        reopenBtn.style.fontSize = "14px";
+      
+        reopenBtn.onclick = () => {
+          widget.style.display = "block";
+          reopenBtn.remove();
+        };
+      
+        document.body.appendChild(reopenBtn);
+      }      
     function renderWidget(config) {
       if (!config) return;
   
@@ -83,7 +105,10 @@
       const closeBtn = document.createElement("div");
       closeBtn.className = "my-widget-close";
       closeBtn.textContent = "✕";
-      closeBtn.onclick = () => widget.remove();
+      closeBtn.onclick = () => {
+        widget.style.display = "none";
+        createReopenButton(widget);
+      };
   
       const content = document.createElement("div");
       content.className = "my-widget-content";
