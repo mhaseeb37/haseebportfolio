@@ -62,6 +62,7 @@ console.log("Widget script loaded");
       
         reopenBtn.onclick = () => {
           widget.style.display = "block";
+          reopenBtn.style.display = "none";
           reopenBtn.remove();
         };
       
