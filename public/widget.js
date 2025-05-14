@@ -1,7 +1,9 @@
 (function () {
     function getScriptConfig() {
-      const script = document.currentScript;
-      const configAttr = script?.getAttribute("data-config");
+      // Find the current script tag
+      const scripts = document.getElementsByTagName('script');
+      const currentScript = scripts[scripts.length - 1]; // fallback if currentScript is null
+      const configAttr = currentScript.getAttribute("data-config");
       if (!configAttr) return null;
   
       try {
@@ -13,7 +15,8 @@
     }
   
     function createStyles() {
-      const css = `
+      const style = document.createElement("style");
+      style.textContent = `
         .my-widget-box {
           position: fixed;
           z-index: 9999;
@@ -38,9 +41,7 @@
           width: 100%;
         }
       `;
-      const styleTag = document.createElement("style");
-      styleTag.innerHTML = css;
-      document.head.appendChild(styleTag);
+      document.head.appendChild(style);
     }
   
     function renderWidget(config) {
@@ -50,12 +51,17 @@
       if ((isMobile && config.disableOn === "mobile") || (!isMobile && config.disableOn === "desktop")) return;
   
       const widget = document.createElement("div");
-      widget.id = "my-widget";
       widget.className = "my-widget-box";
-      widget.style.fontFamily = config.appearance.fontFamily;
-      widget.style.fontSize = config.appearance.fontSize;
-      widget.style.backgroundColor = config.appearance.bgColor;
-      if (config.position !== "bottom-full") widget.style.width = config.appearance.width;
+  
+      Object.assign(widget.style, {
+        fontFamily: config.appearance.fontFamily,
+        fontSize: config.appearance.fontSize,
+        backgroundColor: config.appearance.bgColor
+      });
+  
+      if (config.position !== "bottom-full") {
+        widget.style.width = config.appearance.width;
+      }
   
       switch (config.position) {
         case "right-full":
@@ -76,7 +82,7 @@
   
       const closeBtn = document.createElement("div");
       closeBtn.className = "my-widget-close";
-      closeBtn.innerHTML = "✕";
+      closeBtn.textContent = "✕";
       closeBtn.onclick = () => widget.remove();
   
       const content = document.createElement("div");
@@ -92,13 +98,17 @@
       widget.appendChild(closeBtn);
       widget.appendChild(content);
       document.body.appendChild(widget);
-  
       widget.style.display = "block";
     }
   
-    document.addEventListener("DOMContentLoaded", () => {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => {
+        createStyles();
+        renderWidget(getScriptConfig());
+      });
+    } else {
       createStyles();
-      const config = getScriptConfig();
-      renderWidget(config);
-    });
-  })();  
+      renderWidget(getScriptConfig());
+    }
+  })();
+  
