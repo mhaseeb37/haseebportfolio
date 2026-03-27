@@ -16,7 +16,7 @@
     "@nextui-org/react": "^2.4.6",
     "contentful": "^11.0.3",
     "gsap": "^3.12.5",
-    "next": "14.2.9",
+    "next": "14.2.35",
     "nodemailer": "^6.9.15",
     "phosphor-react": "^1.4.1",
     "react": "^18",
